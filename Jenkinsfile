@@ -39,8 +39,8 @@ pipeline {
 stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
-        env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"
-        env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+        sh 'env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"'
+        sh 'env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"'
         sh 'npm --version'
       }
     }

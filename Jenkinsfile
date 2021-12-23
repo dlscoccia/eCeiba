@@ -39,7 +39,7 @@ pipeline {
 stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
-        
+        sh 'npm run install'
       }
     }
 
@@ -81,7 +81,7 @@ stage('Static Code Analysis') {
     }
     success {
       echo 'This will run only if successful'
-      
+      junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
     }
     failure {
       echo 'This will run only if failed'

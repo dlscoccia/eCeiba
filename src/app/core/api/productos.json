@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "Bonsai",
+    "id": 1,
+    "edad": 2,
+    "especie": "bonsai raro",
+    "precio": 40000,
+    "imagen": "https://m.media-amazon.com/images/I/81x6LGYh93L._CR307,0,1140,1140_UX256.jpg"
+  },
+  {
+    "nombre": "Bonsai",
+    "id": 2,
+    "edad": 2,
+    "especie": "bonsai raro",
+    "precio": 40000,
+    "imagen": "https://m.media-amazon.com/images/I/81x6LGYh93L._CR307,0,1140,1140_UX256.jpg"
+  },
+  {
+    "nombre": "Bonsai",
+    "id": 3,
+    "edad": 2,
+    "especie": "bonsai raro",
+    "precio": 40000,
+    "imagen": "https://m.media-amazon.com/images/I/81x6LGYh93L._CR307,0,1140,1140_UX256.jpg"
+  },
+  {
+    "nombre": "Bonsai",
+    "id": 4,
+    "edad": 2,
+    "especie": "bonsai raro",
+    "precio": 40000,
+    "imagen": "https://m.media-amazon.com/images/I/81x6LGYh93L._CR307,0,1140,1140_UX256.jpg"
+  },
+  {
+    "nombre": "Bonsai",
+    "id": 5,
+    "edad": 2,
+    "especie": "bonsai raro",
+    "precio": 40000,
+    "imagen": "https://m.media-amazon.com/images/I/81x6LGYh93L._CR307,0,1140,1140_UX256.jpg"
+  },
+  {
+    "nombre": "Bonsai",
+    "id": 6,
+    "edad": 2,
+    "especie": "bonsai raro",
+    "precio": 40000,
+    "imagen": "https://m.media-amazon.com/images/I/81x6LGYh93L._CR307,0,1140,1140_UX256.jpg"
+  }
+]

@@ -1,3 +1,4 @@
+@Library('ceiba-jenkins-library') _
 pipeline {
   //Donde se va a ejecutar el Pipeline
   agent {
@@ -55,14 +56,14 @@ stage('NPM Install') {
     }
 
 
-    stage('Static Code Analysis') {
-      steps{
-        echo '------------>Análisis de código estático<------------'
-        withSonarQubeEnv('Sonar') {
-sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
-        }
-      }
+stage('Static Code Analysis') {
+    steps{
+        	sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:[eCeiba-daniel.lorenzo]', 
+        sonarName:'CeibaADN-eCeiba(daniel.lorenzo)', 
+        sonarPathProperties:'./sonar-project.properties')
     }
+} 
+
 
     stage('Build') {
       steps {
@@ -73,14 +74,17 @@ sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallat
   }
 
   post {
+    mail ()
     always {
       echo 'This will always run'
     }
     success {
       echo 'This will run only if successful'
+      junit 'build/test-results/test/*.xml'
     }
     failure {
       echo 'This will run only if failed'
+mail (to: 'daniel.lorenzo@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}")
     }
     unstable {
       echo 'This will run only if the run was marked as unstable'

@@ -36,25 +36,25 @@ pipeline {
     }
         
 
-stage('NPM Install') {
+/* stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
         sh 'npm install'
       }
-    }
+    } */
 
-    stage('Unit Test') {
+/*     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
         sh 'npm run test'
       }
-    }
-    stage('Test end-to-end') {
+    } */
+/*     stage('Test end-to-end') {
       steps{
         echo "------------>Testing Protractor<------------"
         sh 'npm run e2e'
       }
-    }
+    } */
 
 
 stage('Static Code Analysis') {
@@ -66,13 +66,13 @@ stage('Static Code Analysis') {
 } 
 
 
-    stage('Build') {
+/*     stage('Build') {
       steps {
         echo "------------>Build<------------"
         sh 'npm run build'
       }
     }  
-  }
+  } */
 
   post {
     

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import FiltrosProductos from './FiltrosProductos';
+import FiltrosProductos from '../components/FiltrosProductos';
 import GrillaProductos from './GrillaProductos';
 
 const Container = styled.div``;

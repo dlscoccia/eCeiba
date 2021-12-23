@@ -34,17 +34,7 @@ pipeline {
         checkout scm
       }
     }
-        stage('Setup Python 2.7'){
-        def pythonBin = tool 'python27'
-        // Jenkins docker image has Jenkins user's home in "/var/jenkins_home"
-        sh "rm -Rf /var/jenkins_home/tools/python ; mkdir -p /var/jenkins_home/tools/python"
-        // Link python to python 2.7
-        sh "ln -s ${pythonBin} /var/jenkins_home/tools/python/python"
-        // Include link in path --don't use "~" in path, it won't be resolved
-        env.PATH = "~/tools/python:${env.PATH}:~/tools/python"
-        // Displays correctly Python 2.7
-        sh "python --version"
-    }
+        
 
 stage('NPM Install') {
       steps {

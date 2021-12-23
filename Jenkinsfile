@@ -13,7 +13,8 @@ pipeline {
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
   tools {
-    jdk 'JDK8_Centos' //Verisión preinstalada en la Configuración del Master
+    jdk 'JDK8_Centos'
+    nodejs 'node' //Verisión preinstalada en la Configuración del Master
   }
 /*	Versiones disponibles
       JDK8_Mac
@@ -39,6 +40,7 @@ pipeline {
 stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
+      sh 'node -v'
       sh 'npm install'
     }
 }

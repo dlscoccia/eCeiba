@@ -41,7 +41,7 @@ stage('NPM Install') {
         echo "------------>Installing<------------"
       sh 'npm install'
     }
-
+}
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"

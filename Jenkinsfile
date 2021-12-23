@@ -75,7 +75,7 @@ stage('Static Code Analysis') {
   }
 
   post {
-    mail ()
+    
     always {
       echo 'This will always run'
     }
@@ -85,6 +85,7 @@ stage('Static Code Analysis') {
     }
     failure {
       echo 'This will run only if failed'
+      mail ()
 mail (to: 'daniel.lorenzo@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}")
     }
     unstable {

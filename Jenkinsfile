@@ -25,9 +25,12 @@ pipeline {
       JDK13_Centos
       JDK14_Centos
 */
-env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"
+node {
+
+    env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"
     env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
     sh 'npm --version'
+}
   //Aquí comienzan los “items” del Pipeline
   stages{
     stage('Checkout') {

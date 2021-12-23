@@ -34,7 +34,7 @@ pipeline {
         checkout scm
       }
     }
-        stage ('Setup Python 2.7'){
+        stage('Setup Python 2.7'){
         def pythonBin = tool 'python27'
         // Jenkins docker image has Jenkins user's home in "/var/jenkins_home"
         sh "rm -Rf /var/jenkins_home/tools/python ; mkdir -p /var/jenkins_home/tools/python"
@@ -45,7 +45,7 @@ pipeline {
         // Displays correctly Python 2.7
         sh "python --version"
     }
-    
+
 stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"

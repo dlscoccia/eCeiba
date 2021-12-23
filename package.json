@@ -101,5 +101,8 @@
       "text-summary",
       "html"
     ]
+  },
+  "engines": {
+    "node": "14.14.1"
   }
 }

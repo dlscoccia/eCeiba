@@ -39,10 +39,10 @@ pipeline {
 stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
-        sh 'env.NODEJS_HOME = "${tool "NodeJsv12.16.2"}"'
-        sh 'env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"'
-        sh 'npm --version'
+        nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                    sh 'npm config ls'
       }
+      sh 'npm install'
     }
 
     stage('Unit Test') {

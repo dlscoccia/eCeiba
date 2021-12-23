@@ -85,8 +85,7 @@ stage('Static Code Analysis') {
     }
     failure {
       echo 'This will run only if failed'
-      mail ()
-mail (to: 'daniel.lorenzo@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}")
+      mail (to: 'daniel.lorenzo@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}")
     }
     unstable {
       echo 'This will run only if the run was marked as unstable'

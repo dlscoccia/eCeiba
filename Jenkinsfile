@@ -11,17 +11,10 @@ pipeline {
  	disableConcurrentBuilds()
   }
 
-  //Una sección que define las herramientas “preinstaladas” en Jenkins
-/*	Versiones disponibles
-      JDK8_Mac
-      JDK6_Centos
-      JDK7_Centos
-      JDK8_Centos
-      JDK10_Centos
-      JDK11_Centos
-      JDK13_Centos
-      JDK14_Centos
-*/
+  tools {
+  nodejs 'NodeJS12'
+  sh 'node -v'
+}
 
   //Aquí comienzan los “items” del Pipeline
   stages{

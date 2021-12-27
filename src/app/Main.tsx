@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageSlider from './feature/components/Carrousel/ImageSlider';
+import ImageSlider from './feature/components/ImageSlider/ImageSlider';
 import Productos from './feature/components/Products/Products';
 import SliderData from './core/api/SliderData';
 

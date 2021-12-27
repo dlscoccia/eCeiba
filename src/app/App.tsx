@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-
 import { connect } from 'react-redux';
-
 import Navbar from './feature/components/Navbar/Navbar';
 import Main from './Main';
 import Cart from './feature/components/Cart/Cart';

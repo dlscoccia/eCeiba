@@ -42,13 +42,13 @@ stage('NPM Install') {
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh 'npm run test:coverage'
+      //  sh 'npm run test:coverage'
       }
     }
     stage('Test end-to-end') {
       steps{
         echo "------------>Testing Protractor<------------"
-        echo 'cypres test to run local'
+       // echo 'cypres test to run local'
       }
     }
 
@@ -65,7 +65,7 @@ stage('Static Code Analysis') {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-        echo 'Working on build'
+        sh 'npm run ruild'
       }
     }  
   }

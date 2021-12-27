@@ -39,7 +39,6 @@
     "typePatches"
   ],
   "include": [
-    "src",
-    "test/PaginadorComponentes.test.js"
+    "src"
   ]
 }

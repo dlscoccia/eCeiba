@@ -68,7 +68,7 @@ stage('Static Code Analysis') {
     }
     success {
       echo 'This will run only if successful'
-      junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
+      junit 'build/test-results/test/*.xml'
     }
     failure {
       echo 'This will run only if failed'

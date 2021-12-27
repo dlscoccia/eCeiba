@@ -13,7 +13,7 @@ pipeline {
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
   tools {
-    jdk 'JDK8_Centos'
+    //jdk 'JDK8_Centos'
     //nodejs 'Node11' //Verisión preinstalada en la Configuración del Master
   }
 /*	Versiones disponibles
@@ -40,14 +40,13 @@ pipeline {
 stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
-      sh 'node -v'
       sh 'npm install'
     }
 }
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh 'npm run test'
+        sh 'npm run test:coverage'
       }
     }
     stage('Test end-to-end') {

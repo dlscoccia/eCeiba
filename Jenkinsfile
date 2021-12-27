@@ -42,7 +42,7 @@ stage('NPM Install') {
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh 'npm run test'
+        sh 'npm run test:coverage'
       }
     }
     stage('Test end-to-end') {

@@ -3,10 +3,9 @@ import '@testing-library/jest-dom/extend-expect';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Cart from './Cart';
-import CartItem from './CartItem/CartItem';
 import store from '../../../core/redux/store';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { CartItemType } from '../../../Main';
+
 
 const cart = [
   {

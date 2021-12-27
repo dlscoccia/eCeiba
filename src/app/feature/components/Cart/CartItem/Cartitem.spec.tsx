@@ -1,10 +1,6 @@
 import React, { ReactNode } from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import {
-  fireEvent,
-  prettyDOM,
-  render as rtlRender,
-} from '@testing-library/react';
+import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import CartItem from './CartItem';
 import store from '../../../../core/redux/store';
@@ -35,5 +31,5 @@ test('renders content', () => {
   component.getByText('$ 140000');
   const qty = document.querySelector('input');
   expect(qty).toHaveValue(5);
-  const button = component.container.querySelector('button');
+  component.container.querySelector('button');
 });

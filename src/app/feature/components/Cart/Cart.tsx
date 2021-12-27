@@ -28,8 +28,10 @@ const Cart = ({ cart }: cartProps) => {
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
   const handleClick = () => {
-    if (totalItems > 0) return setShowModal(true);
-  };
+    if (totalItems > 0) {
+      return setShowModal(true);
+    }
+  };;
 
   const handleClose = () => {
     setShowModal(false);

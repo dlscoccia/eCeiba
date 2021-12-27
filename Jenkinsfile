@@ -46,11 +46,12 @@ stage('NPM Install') {
 
 stage('Static Code Analysis') {
     steps{
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:eCeiba-daniel.lorenzo', 
+        	sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:eCeiba-daniel.lorenzo', 
         sonarName:'CeibaADN-eCeiba-daniel.lorenzo', 
         sonarPathProperties:'./sonar-project.properties')
     }
 } 
+
 
 
     stage('Build') {

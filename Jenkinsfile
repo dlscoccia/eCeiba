@@ -12,10 +12,6 @@ pipeline {
   }
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
-  tools {
-    //jdk 'JDK8_Centos'
-    //nodejs 'Node11' //Verisión preinstalada en la Configuración del Master
-  }
 /*	Versiones disponibles
       JDK8_Mac
       JDK6_Centos

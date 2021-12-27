@@ -52,7 +52,7 @@ stage('NPM Install') {
     stage('Test end-to-end') {
       steps{
         echo "------------>Testing Protractor<------------"
-        
+        echo 'cypres test to run local'
       }
     }
 

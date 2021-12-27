@@ -13,7 +13,6 @@ pipeline {
 
   tools {
   nodejs 'NodeJS12'
-  sh 'node -v'
 }
 
   //Aquí comienzan los “items” del Pipeline
@@ -29,6 +28,7 @@ pipeline {
 stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
+          sh 'node -v'
       sh 'npm install'
     }
 }

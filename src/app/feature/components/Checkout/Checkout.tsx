@@ -32,14 +32,18 @@ const Checkout = () => {
                 console.log(values);
               }}
             >
-              <Form>
+              <Form role="form">
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <Typography>Información personal</Typography>
                   </Grid>
 
                   <Grid item xs={6}>
-                    <Textfield name="firstName" label="Nombre" />
+                    <Textfield
+                      name="firstName"
+                      label="Nombre"
+                      htmlFor="firstName"
+                    />
                   </Grid>
 
                   <Grid item xs={6}>

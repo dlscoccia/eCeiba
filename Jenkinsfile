@@ -28,20 +28,18 @@ pipeline {
 stage('NPM Install') {
       steps {
         echo "------------>Installing<------------"
-          sh 'node -v'
       sh 'npm install'
     }
 }
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh 'npm run test:coverage'
+        sh 'npm run test'
       }
     }
     stage('Test end-to-end') {
       steps{
         echo "------------>Testing Protractor<------------"
-       // echo 'cypres test to run local'
       }
     }
 

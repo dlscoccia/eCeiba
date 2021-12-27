@@ -16,11 +16,11 @@ const Suscribete = () => {
     <Container>
       <div className="info">
         <h2>Suscribete!!</h2>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <p>Enterate de todas nuestras novedades.</p>
       </div>
       <div className="emailInput">
         <label htmlFor="email">Email</label>
-        <input type="email" />
+        <input type="email" name="email" />
       </div>
     </Container>
   );

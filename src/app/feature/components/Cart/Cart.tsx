@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from "react";
-import styles from "./Cart.module.css";
+import React, { useState, useEffect } from 'react';
+import styles from './Cart.module.css';
+import { connect } from 'react-redux';
+import CartItem from './CartItem/CartItem';
+import { CartItemType } from '../../../Main';
+import Modal from '../Modal/Modal';
+import Checkout from '../Checkout/Checkout';
+type cartProps = {
+  cart: CartItemType[];
+};
 
-import { connect } from "react-redux";
-
-import CartItem from "./CartItem/CartItem";
-
-const Cart = ({ cart }) => {
+const Cart = ({ cart }: cartProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     let items = 0;
@@ -22,6 +27,14 @@ const Cart = ({ cart }) => {
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
+  const handleClick = () => {
+    if (totalItems > 0) return setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className={styles.cart}>
       <div className={styles.cart__items}>
@@ -35,15 +48,20 @@ const Cart = ({ cart }) => {
           <span>TOTAL: ({totalItems} items)</span>
           <span>$ {totalPrice}</span>
         </div>
-        <button className={styles.summary__checkoutBtn}>
+        <button onClick={handleClick} className={styles.summary__checkoutBtn}>
           Proceed To Checkout
         </button>
       </div>
+      {showModal && (
+        <Modal onClose={handleClose}>
+          <Checkout />
+        </Modal>
+      )}
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
     cart: state.shop.cart,
   };

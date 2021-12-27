@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
-
+import logo from '../../../../assets/img/logo.png';
 import { connect } from 'react-redux';
 import { ProductType } from '../../../core/redux/Shopping/shopping-reducer';
 
@@ -23,12 +23,8 @@ const Navbar = ({ cart }: CartProps) => {
 
   return (
     <div className={styles.navbar}>
-      <Link to="/">
-        <img
-          className={styles.navbar__logo}
-          src="https://o.remove.bg/downloads/fcb753ce-f566-4344-bbcc-8b1aa37dff90/chirnjrtb1sua07xbfgt-removebg-preview.png"
-          alt="logo"
-        />
+      <Link to="/" className={styles.navbar__logo}>
+        <img className={styles.navbar__logo__image} src={logo} alt="logo" />
         <h2 className={styles.cart__title}>eCeiba</h2>
       </Link>
       <Link to="/cart">
@@ -38,7 +34,9 @@ const Navbar = ({ cart }: CartProps) => {
             src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-ecommerce-flatart-icons-outline-flatarticons.png"
             alt="shopping cart"
           />
-          <div className={styles.cart__counter}>{cartCount}</div>
+          <div className={styles.cart__counter} id="cart-total">
+            {cartCount}
+          </div>
         </div>
       </Link>
     </div>

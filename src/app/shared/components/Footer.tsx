@@ -2,17 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100px;
+  height: 50px;
   background-color: #285238;
   color: #fff;
-  text-align: center;
+  font-size: 12px;
 `;
 
 const Footer = () => {
   return (
     <Container>
-      <h2>Footer</h2>
+      <p>Todos los derechos reservados</p>
     </Container>
   );
 };

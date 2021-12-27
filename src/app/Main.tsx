@@ -1,8 +1,7 @@
 import React from 'react';
-import MainBanner from './feature/components/MainBanner';
-import ProductoDestacado from './feature/componentes/ProductoDestacado';
-import ListaProductos from './feature/componentes/ListaProductos';
-import Suscribete from './feature/components/Suscribete';
+import ImageSlider from './feature/components/Carrousel/Carrousel';
+import Productos from './feature/components/Products/Products';
+import SliderData from './core/api/SliderData';
 
 export type CartItemType = {
   id: number;
@@ -11,17 +10,15 @@ export type CartItemType = {
   image: string;
   price: number;
   title: string;
-  amount: number;
+  qty: number;
 };
 
 const Main = () => {
   return (
-    <div>
-      <MainBanner />
-      <ProductoDestacado />
-      <ListaProductos />
-      <Suscribete />
-    </div>
+    <>
+      <ImageSlider slides={SliderData} />
+      <Productos />
+    </>
   );
 };
 

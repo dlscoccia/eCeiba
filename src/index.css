@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
 :root {
-  --primary-color: #e8fccf;
-  --secondary-color: #3da35d;
-  --light-color: #eeeeee;
-  --dark-color: #134611;
+  --primary-color: #a3b18a;
+  --secondary-color: #588157;
+  --light-color: #dad7cd;
+  --dark-color: #344e41;
+  --primary-font: 'Pushster', cursive;
 }
 
 * {

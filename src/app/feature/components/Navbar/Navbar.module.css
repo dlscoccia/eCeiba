@@ -3,14 +3,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem;
-  background: var(--primary-color);
-  position: sticky;
-  top: 0;
-  left: 0;
+  padding: 1rem;
+  background: var(--light-color);
 }
 
 .navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo__image {
   width: 100px;
 }
 
@@ -34,6 +36,7 @@
   font-size: 30px;
   font-weight: bold;
   color: var(--dark-color);
+  font-family: var(--primary-font);
 }
 
 .cart__image {

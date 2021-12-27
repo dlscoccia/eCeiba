@@ -24,9 +24,9 @@ test('Renders the cart', () => {
   expect(component.getAllByText('Dirección 1')).toHaveLength(
     numberOfElelemntsByInput
   );
-  expect(
-    component.getAllByText('Dirección numberOfElelemntsByInput')
-  ).toHaveLength(numberOfElelemntsByInput);
+  expect(component.getAllByText('Dirección 2')).toHaveLength(
+    numberOfElelemntsByInput
+  );
   expect(component.getAllByText('Ciudad')).toHaveLength(
     numberOfElelemntsByInput
   );

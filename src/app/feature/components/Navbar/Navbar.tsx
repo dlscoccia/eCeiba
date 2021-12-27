@@ -27,18 +27,20 @@ const Navbar = ({ cart }: CartProps) => {
         <img className={styles.navbar__logo__image} src={logo} alt="logo" />
         <h2 className={styles.cart__title}>eCeiba</h2>
       </Link>
-      <Link to="/cart">
-        <div className={styles.navbar__cart}>
-          <img
-            className={styles.cart__image}
-            src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-ecommerce-flatart-icons-outline-flatarticons.png"
-            alt="shopping cart"
-          />
-          <div className={styles.cart__counter} id="cart-total">
-            {cartCount}
+      <button>
+        <Link to="/cart" role="link">
+          <div className={styles.navbar__cart}>
+            <img
+              className={styles.cart__image}
+              src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-ecommerce-flatart-icons-outline-flatarticons.png"
+              alt="shopping cart"
+            />
+            <div className={styles.cart__counter} id="cart-total">
+              {cartCount}
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </button>
     </div>
   );
 };

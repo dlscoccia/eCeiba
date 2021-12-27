@@ -12,7 +12,7 @@ pipeline {
   }
 
   tools {
-  nodejs 'NodeJS12'
+  nodejs 'NodeJS14'
 }
 
   //Aquí comienzan los “items” del Pipeline

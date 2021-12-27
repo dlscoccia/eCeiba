@@ -5,18 +5,39 @@ import Checkout from './Checkout';
 
 test('Renders the cart', () => {
   const component = render(<Checkout />);
+  const numberOfElelemntsByInput = 2;
   component.getByRole('form');
   component.getByText('Información personal');
-  expect(component.getAllByText('Nombre')).toHaveLength(2);
-  expect(component.getAllByText('Apellido')).toHaveLength(2);
-  expect(component.getAllByText('Email')).toHaveLength(2);
-  expect(component.getAllByText('Teléfono')).toHaveLength(2);
+  expect(component.getAllByText('Nombre')).toHaveLength(
+    numberOfElelemntsByInput
+  );
+  expect(component.getAllByText('Apellido')).toHaveLength(
+    numberOfElelemntsByInput
+  );
+  expect(component.getAllByText('Email')).toHaveLength(
+    numberOfElelemntsByInput
+  );
+  expect(component.getAllByText('Teléfono')).toHaveLength(
+    numberOfElelemntsByInput
+  );
   component.getByText('Dirección');
-  expect(component.getAllByText('Dirección 1')).toHaveLength(2);
-  expect(component.getAllByText('Dirección 2')).toHaveLength(2);
-  expect(component.getAllByText('Ciudad')).toHaveLength(2);
-  expect(component.getAllByText('Departamento')).toHaveLength(2);
+  expect(component.getAllByText('Dirección 1')).toHaveLength(
+    numberOfElelemntsByInput
+  );
+  expect(
+    component.getAllByText('Dirección numberOfElelemntsByInput')
+  ).toHaveLength(numberOfElelemntsByInput);
+  expect(component.getAllByText('Ciudad')).toHaveLength(
+    numberOfElelemntsByInput
+  );
+  expect(component.getAllByText('Departamento')).toHaveLength(
+    numberOfElelemntsByInput
+  );
   component.getByText('Fecha del domicilio');
-  expect(component.getAllByText('Fecha')).toHaveLength(2);
-  expect(component.getAllByText('Instrucciones')).toHaveLength(2);
+  expect(component.getAllByText('Fecha')).toHaveLength(
+    numberOfElelemntsByInput
+  );
+  expect(component.getAllByText('Instrucciones')).toHaveLength(
+    numberOfElelemntsByInput
+  );
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, prettyDOM, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Suscribete from './Suscribete';
 
 test('Renders the component', () => {

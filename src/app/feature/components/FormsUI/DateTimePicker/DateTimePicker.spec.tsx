@@ -8,37 +8,21 @@ import CheckoutForm from './DateTimePicker';
 test('rendering and submitting a basic Formik form', async () => {
   const handleSubmit = jest.fn();
   render(<CheckoutForm onSubmit={handleSubmit} />);
+screen.getByText(/sign up/i);
+screen.getByText(/first name/i);
+const firstName = screen.getByLabelText(/first name/i);
+fireEvent.change(firstName, { target: { value: 'Alfonso' } });
+expect(firstName).toHaveValue('Alfonso');
+screen.getByText(/last name/i);
+const lastName = screen.getByLabelText(/last name/i);
+fireEvent.change(lastName, { target: { value: 'Alfonso' } });
+expect(lastName).toHaveValue('Alfonso');
+screen.getByText(/email/i);
+const email = screen.getByLabelText(/email/i);
+fireEvent.change(email, { target: { value: 'Alfonso@gmail.com' } });
+expect(email).toHaveValue('Alfonso@gmail.com');
+const submitButton = screen.getByText(/submit/i);
+fireEvent.submit(submitButton, handleSubmit);
 
-  userEvent.type(screen.getByLabelText(/first name/i), 'John');
-  userEvent.type(screen.getByLabelText(/last name/i), 'Dee');
-  userEvent.type(screen.getByLabelText(/email/i), 'john.dee@someemail.com');
 
-  userEvent.click(screen.getByRole('button', { name: /submit/i }));
-});
-
-jest.mock('react-datepicker', () => (props: any) => (
-  <input
-    data-testid="mockedDateField"
-    onChange={() => {
-      console.log(props.onChange);
-      props.onChange('asdfasd');
-    }}
-  />
-));
-
-test('should remove date error id we select date', async () => {
-  const handleSubmit = jest.fn();
-  const { getByText, getByTestId, queryByTestId } = render(
-    <CheckoutForm onSubmit={handleSubmit} />
-  );
-
-  const button = getByText('Submit');
-  fireEvent.click(button);
-
-  const mockedDateField = getByTestId('mockedDateField');
-  fireEvent.change(mockedDateField, { target: { value: new Date() } });
-
-  await waitFor(() => {
-    expect(queryByTestId('dateError')).toBe(null);
-  });
 });

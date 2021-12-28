@@ -3,7 +3,6 @@ import styles from './Cart.module.css';
 import { connect } from 'react-redux';
 import CartItem from './CartItem/CartItem';
 import { CartItemType } from '../../../Main';
-import Modal from '../Modal/Modal';
 import Checkout from '../Checkout/Checkout';
 type cartProps = {
   cart: CartItemType[];
@@ -55,11 +54,6 @@ const Cart = ({ cart }: cartProps) => {
           Proceed To Checkout
         </button>
       </div>
-      {showModal && (
-        <Modal onClose={handleClose}>
-          <Checkout />
-        </Modal>
-      )}
     </div>
   );
 };

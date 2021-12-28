@@ -18,9 +18,11 @@ const ImageSlider = ({ slides }: SlidesProps) => {
 
   return (
     <section className="slider">
-      <button className="left-arrow">
-        <FaArrowAltCircleLeft onClick={prevSlide} />
-      </button>
+      <FaArrowAltCircleLeft
+        className="left-arrow"
+        onClick={prevSlide}
+        role="button"
+      />
       <FaArrowAltCircleRight
         className="right-arrow"
         onClick={nextSlide}

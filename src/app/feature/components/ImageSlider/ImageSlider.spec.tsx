@@ -9,7 +9,6 @@ test('Renders the cart', () => {
   component.getByAltText('slide');
   const left = component.getAllByRole('button')[0];
   const right = component.getAllByRole('button')[1];
-  //fireEvent.click(left);
   fireEvent.click(right);
   fireEvent.click(right);
   let active = document.getElementsByClassName('slide active')[0];
@@ -18,4 +17,10 @@ test('Renders the cart', () => {
   fireEvent.click(right);
   active = document.getElementsByClassName('slide active')[0];
   expect(active).toHaveAttribute('data-testid', '0');
+  fireEvent.click(left);
+  active = document.getElementsByClassName('slide active')[0];
+  expect(active).toHaveAttribute('data-testid', '3');
+  fireEvent.click(left);
+  active = document.getElementsByClassName('slide active')[0];
+  expect(active).toHaveAttribute('data-testid', '2');
 });

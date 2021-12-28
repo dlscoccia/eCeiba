@@ -11,8 +11,6 @@
     "@types/react-helmet": "^6.0.0",
     "axios": "^0.24.0",
     "cross-env": "^7.0.2",
-    "formik": "^2.1.4",
-    "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-datepicker": "^4.5.0",
@@ -24,8 +22,7 @@
     "react-scripts": "^5.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.1.1",
-    "yup": "^0.29.1"
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -73,7 +70,6 @@
     "@types/sinon": "^9.0.4",
     "@types/styled-components": "^5.1.0",
     "@types/testing-library__react": "^10.0.1",
-    "@types/yup": "^0.29.3",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
     "cypress": "^9.2.0",

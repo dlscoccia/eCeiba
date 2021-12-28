@@ -16,7 +16,7 @@ test('rendering and submitting a basic Formik form', async () => {
   userEvent.click(screen.getByRole('button', { name: /submit/i }));
 });
 
-jest.mock('react-datepicker', () => (props) => (
+jest.mock('react-datepicker', () => (props: any) => (
   <input
     data-testid="mockedDateField"
     onChange={() => {

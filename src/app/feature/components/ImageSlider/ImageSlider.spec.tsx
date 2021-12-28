@@ -7,7 +7,11 @@ import slides from '../../../core/api/SliderData';
 test('Renders the cart', () => {
   const component = render(<ImageSlider slides={slides} />);
   component.getByAltText('slide');
-  component.getAllByRole('button');
   const left = component.getAllByRole('button')[0];
-  fireEvent.click(left);
+  const right = component.getAllByRole('button')[1];
+  //fireEvent.click(left);
+  fireEvent.click(right);
+  fireEvent.click(right);
+  const active = document.getElementsByClassName('slide active')[0];
+  expect(active).toHaveAttribute('data-testid', '2');
 });

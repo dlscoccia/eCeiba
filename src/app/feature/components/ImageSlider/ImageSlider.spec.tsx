@@ -12,6 +12,10 @@ test('Renders the cart', () => {
   //fireEvent.click(left);
   fireEvent.click(right);
   fireEvent.click(right);
-  const active = document.getElementsByClassName('slide active')[0];
+  let active = document.getElementsByClassName('slide active')[0];
   expect(active).toHaveAttribute('data-testid', '2');
+  fireEvent.click(right);
+  fireEvent.click(right);
+  active = document.getElementsByClassName('slide active')[0];
+  expect(active).toHaveAttribute('data-testid', '0');
 });

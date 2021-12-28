@@ -31,6 +31,7 @@ const Cart = ({ cart }: cartProps) => {
     if (totalItems > 0) {
       return setShowModal(true);
     }
+    return false;
   };
 
   const handleClose = () => {

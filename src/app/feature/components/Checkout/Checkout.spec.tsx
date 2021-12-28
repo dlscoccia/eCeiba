@@ -6,6 +6,7 @@ import Checkout from './Checkout';
 test('Renders the cart', () => {
   const component = render(<Checkout />);
   const numberOfElelemntsByInput = 2;
+  const numberOfElelemntsByEmail = 3;
   component.getByRole('form');
   component.getByText('Información personal');
   expect(component.getAllByText('Nombre')).toHaveLength(
@@ -15,7 +16,7 @@ test('Renders the cart', () => {
     numberOfElelemntsByInput
   );
   expect(component.getAllByText('Email')).toHaveLength(
-    numberOfElelemntsByInput
+    numberOfElelemntsByEmail
   );
   expect(component.getAllByText('Teléfono')).toHaveLength(
     numberOfElelemntsByInput
@@ -34,9 +35,6 @@ test('Renders the cart', () => {
     numberOfElelemntsByInput
   );
   component.getByText('Fecha del domicilio');
-  expect(component.getAllByText('Fecha')).toHaveLength(
-    numberOfElelemntsByInput
-  );
   expect(component.getAllByText('Instrucciones')).toHaveLength(
     numberOfElelemntsByInput
   );

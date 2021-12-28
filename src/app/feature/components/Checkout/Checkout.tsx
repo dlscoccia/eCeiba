@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid, Typography } from '@material-ui/core';
 import Textfield from '../FormsUI/Textfield';
-import DateTimePicker from '../FormsUI/DataTimePicker';
+import CheckoutForm from '../FormsUI/DateTimePicker/DateTimePicker';
 import Button from '../FormsUI/Button';
 import FORM_VALIDATION from '../../utils/validationSchema';
 import INITIAL_FORM_STATE from '../../utils/initialValues';
@@ -82,7 +82,7 @@ const Checkout = () => {
                     <Typography>Fecha del domicilio</Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <DateTimePicker name="shippingDate" label="Fecha" />
+                    <CheckoutForm onSubmit={() => {}} />
                   </Grid>
 
                   <Grid item xs={12}>

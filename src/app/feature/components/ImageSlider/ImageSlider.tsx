@@ -18,11 +18,9 @@ const ImageSlider = ({ slides }: SlidesProps) => {
 
   return (
     <section className="slider">
-      <FaArrowAltCircleLeft
-        className="left-arrow"
-        onClick={prevSlide}
-        role="button"
-      />
+      <button className="left-arrow">
+        <FaArrowAltCircleLeft onClick={prevSlide} />
+      </button>
       <FaArrowAltCircleRight
         className="right-arrow"
         onClick={nextSlide}
@@ -33,6 +31,7 @@ const ImageSlider = ({ slides }: SlidesProps) => {
           <div
             className={index === current ? 'slide active' : 'slide'}
             key={index}
+            data-testid={index}
           >
             {index === current && <img src={slide.image} alt="slide" />}
           </div>

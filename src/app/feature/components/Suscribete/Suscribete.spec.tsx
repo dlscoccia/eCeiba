@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
+import { fireEvent, prettyDOM, render } from '@testing-library/react';
 import Suscribete from './Suscribete';
 
 test('Renders the component', () => {
@@ -8,5 +8,7 @@ test('Renders the component', () => {
   component.getByText('Suscribete!!');
   component.getByText('Enterate de todas nuestras novedades.');
   component.getByText('Email').closest('label');
-  component.container.getElementsByTagName('input');
+  const input = component.getByLabelText('Email');
+  fireEvent.change(input, { target: { value: 'hola' } });
+  expect(input).toHaveValue('hola');
 });

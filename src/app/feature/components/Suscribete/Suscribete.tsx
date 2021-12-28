@@ -20,7 +20,7 @@ const Suscribete = () => {
       </div>
       <div className="emailInput">
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" />
+        <input type="email" name="email" id="email" />
       </div>
     </Container>
   );

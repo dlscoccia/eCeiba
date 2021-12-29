@@ -31,7 +31,7 @@ const Checkout = () => {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form onSubmit={(e) => handleSubmit(e)} data-testid="form">
       {formFields.map((field) => (
         <TextInput
           key={field.id}

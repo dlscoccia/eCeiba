@@ -6,7 +6,7 @@ export const formFields = [
     id: 0,
   },
   {
-    label: 'nombre',
+    label: 'apellido',
     minLength: 6,
     email: false,
     id: 1,

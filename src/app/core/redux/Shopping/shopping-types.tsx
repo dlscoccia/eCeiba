@@ -7,21 +7,21 @@ export enum ActionType {
   LOAD_CURRENT_ITEM = 'LOAD_CURRENT_ITEM',
 }
 
-interface addToCart {
+interface AddToCart {
   type: ActionType.ADD_TO_CART;
   payload: {
     id: number;
   };
 }
 
-interface removeFromCart {
+interface RemoveFromCart {
   type: ActionType.REMOVE_FROM_CART;
   payload: {
     id: number;
   };
 }
 
-interface adjustItemQty {
+interface AdjustItemQty {
   type: ActionType.ADJUST_ITEM_QTY;
   payload: {
     id: number;
@@ -29,13 +29,13 @@ interface adjustItemQty {
   };
 }
 
-interface loadCurrentItem {
+interface LoadCurrentItem {
   type: ActionType.LOAD_CURRENT_ITEM;
   payload: typeof ProductType;
 }
 
 export type Action =
-  | addToCart
-  | removeFromCart
-  | adjustItemQty
-  | loadCurrentItem;
+  | AddToCart
+  | RemoveFromCart
+  | AdjustItemQty
+  | LoadCurrentItem;

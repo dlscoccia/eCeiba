@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
-import logo from '../../../../assets/img/logo.png';
+import logo from '../../../assets/img/logo.png';
 import { connect } from 'react-redux';
-import { ProductType } from '../../../core/redux/Shopping/shopping-reducer';
+import { ProductType } from '../../core/redux/Shopping/shopping-reducer';
 
 type CartProps = {
   cart: [];

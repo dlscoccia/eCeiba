@@ -3,7 +3,7 @@ import styles from './Cart.module.css';
 import { connect } from 'react-redux';
 import CartItem from './CartItem/CartItem';
 import { CartItemType } from '../../../Main';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 type cartProps = {
   cart: CartItemType[];
 };

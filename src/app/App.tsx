@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
 import { connect } from 'react-redux';
-import Navbar from './feature/components/Navbar/Navbar';
+import Navbar from './shared/Navbar/Navbar';
 import ProductType from './core/redux/Shopping/shopping-reducer';
 import Footer from './shared/components/Footer/Footer';
 import { AppRouter } from './AppRouter';

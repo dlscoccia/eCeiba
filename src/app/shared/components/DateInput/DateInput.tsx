@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './DateInput.css';
 import holidays from '../../../core/api/holidays.json';
 
-const addDays = (date: string, days: number) => {
-  const newDate = new Date(date);
+const addDays = (dateToAdd: string, days: number) => {
+  const newDate = new Date(dateToAdd);
   newDate.setDate(newDate.getDate() + days);
   return newDate.toISOString().split('T')[0];
 };
@@ -30,8 +30,8 @@ const DateInput = () => {
     }
   };
 
-  const chekIsHoliday = (date: string) => {
-    const isHoliday = holidays[0].holidays.includes(date);
+  const chekIsHoliday = (dateToCheck: string) => {
+    const isHoliday = holidays[0].holidays.includes(dateToCheck);
     if (isHoliday) {
       setHoliday(true);
     } else {

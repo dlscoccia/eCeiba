@@ -7,8 +7,8 @@ test('Renders the component', () => {
   const component = render(<Suscribete />);
   component.getByText('Suscribete!!');
   component.getByText('Enterate de todas nuestras novedades.');
-  component.getByText('Email').closest('label');
-  const input = component.getByLabelText('Email');
+  component.getByText(/Ingresa tu Email/i).closest('label');
+  const input = component.getByLabelText(/Ingresa tu Email/i);
   fireEvent.change(input, { target: { value: 'hola' } });
   expect(input).toHaveValue('hola');
 });

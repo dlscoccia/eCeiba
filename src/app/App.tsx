@@ -4,7 +4,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import Navbar from './feature/components/Navbar/Navbar';
 import ProductType from './core/redux/Shopping/shopping-reducer';
-import Footer from './shared/components/Footer';
+import Footer from './shared/components/Footer/Footer';
 import { AppRouter } from './AppRouter';
 
 type Props = {

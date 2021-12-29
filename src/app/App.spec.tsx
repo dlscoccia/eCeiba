@@ -15,6 +15,6 @@ const render = (component: ReactNode) =>
 
 test('renders the component', () => {
   const component = render(<App />);
-  component.getByText('eCeiba');
-  component.getByText('Todos los derechos reservados');
+  component.getByText(/eCeiba/i);
+  component.getByText(/© Todos los derechos reservados/i);
 });

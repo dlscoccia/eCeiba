@@ -8,15 +8,12 @@ const Container = styled.div`
   gap: 20px;
 `;
 
+type FilterProps = {
+  products: [];
+};
+
 const FiltrosProductos = () => {
-  return (
-    <Container>
-      <button>Menor edad</button>
-      <button>Mayor edad</button>
-      <button>Menor precio</button>
-      <button>Mayor precio</button>
-    </Container>
-  );
+  return <Container>a</Container>;
 };
 
 export default FiltrosProductos;

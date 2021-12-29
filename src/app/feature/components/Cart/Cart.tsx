@@ -3,7 +3,7 @@ import styles from './Cart.module.css';
 import { connect } from 'react-redux';
 import CartItem from './CartItem/CartItem';
 import { CartItemType } from '../../../Main';
-import Checkout from '../Checkout/Checkout';
+import { Link, Redirect } from 'react-router-dom';
 type cartProps = {
   cart: CartItemType[];
 };
@@ -11,7 +11,6 @@ type cartProps = {
 const Cart = ({ cart }: cartProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     let items = 0;
@@ -26,17 +25,6 @@ const Cart = ({ cart }: cartProps) => {
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
-  const handleClick = () => {
-    if (totalItems > 0) {
-      return setShowModal(true);
-    }
-    return false;
-  };
-
-  const handleClose = () => {
-    setShowModal(false);
-  };
-
   return (
     <div className={styles.cart}>
       <div className={styles.cart__items}>
@@ -50,8 +38,8 @@ const Cart = ({ cart }: cartProps) => {
           <span>TOTAL: ({totalItems} items)</span>
           <span>$ {totalPrice}</span>
         </div>
-        <button onClick={handleClick} className={styles.summary__checkoutBtn}>
-          Proceed To Checkout
+        <button className={styles.summary__checkoutBtn} disabled={true}>
+          <Link to="/checkout">Proceed To Checkout</Link>
         </button>
       </div>
     </div>

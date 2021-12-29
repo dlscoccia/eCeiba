@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Moon+Dance&family=Waterfall&display=swap');
 
 :root {
-  --primary-color: #a3b18a;
-  --secondary-color: #588157;
+  --primary-color:#30a056;
   --light-color: #dad7cd;
-  --dark-color: #344e41;
-  --primary-font: 'Pushster', cursive;
+  --dark-color: #222;
+  --logo-font: 'Waterfall', cursive;
+  --header-font: 'Moon Dance', cursive;
+  --text-font: 'Montserrat', sans-serif;
 }
 
 * {

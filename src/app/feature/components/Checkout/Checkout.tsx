@@ -33,12 +33,7 @@ const Checkout = () => {
   return (
     <form onSubmit={(e) => handleSubmit(e)} data-testid="form">
       {formFields.map((field) => (
-        <TextInput
-          key={field.id}
-          {...field}
-          setValidInput={handleValidInput}
-          formState={validInput}
-        />
+        <TextInput key={field.id} {...field} setValidInput={handleValidInput} />
       ))}
 
       <DateInput />

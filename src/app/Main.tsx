@@ -3,6 +3,8 @@ import ImageSlider from './feature/components/ImageSlider/ImageSlider';
 import Productos from './feature/components/Products/Products';
 import SliderData from './core/api/SliderData';
 import ServicesGallery from './feature/components/ServicesGallery/ServicesGallery';
+import VideoBanner from './feature/components/VideoBanner/VideoBanner';
+import Suscribete from './feature/components/Suscribete/Suscribete';
 
 export type CartItemType = {
   id: number;
@@ -17,9 +19,11 @@ export type CartItemType = {
 const Main = () => {
   return (
     <>
-      <ImageSlider slides={SliderData} />
+      <VideoBanner />
       <ServicesGallery />
+      <ImageSlider slides={SliderData} />
       <Productos />
+      <Suscribete />
     </>
   );
 };

@@ -11,7 +11,6 @@ test('Renders the component', () => {
       email={false}
       id={0}
       setValidInput={() => {}}
-      formState={[]}
     />
   );
   expect(component).toBeDefined();
@@ -31,7 +30,6 @@ test('Renders the component', () => {
       id={2}
       email={true}
       setValidInput={() => {}}
-      formState={[]}
     />
   );
   expect(component).toBeDefined();
@@ -54,7 +52,6 @@ test('Renders the component', () => {
       email={false}
       id={1}
       setValidInput={() => {}}
-      formState={[]}
     />
   );
   const minLength = 4;

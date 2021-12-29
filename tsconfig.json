@@ -39,6 +39,6 @@
     "typePatches"
   ],
   "include": [
-    "src"
+    "src", "src/index.d.ts"
   ]
 }

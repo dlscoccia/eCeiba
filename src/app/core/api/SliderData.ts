@@ -1,7 +1,6 @@
 const SliderData = [
   {
-    image:
-      'https://images.unsplash.com/photo-1624162872504-e57ceca8874f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80',
+    image: 'https://images4.alphacoders.com/118/118786.jpg',
   },
   {
     image:

@@ -1,28 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  .info {
-    text-align: center;
-  }
-`;
+import { Wrapper } from './Suscribete.styles';
 
 const Suscribete = () => {
   return (
-    <Container>
-      <div className="info">
-        <h2>Suscribete!!</h2>
-        <p>Enterate de todas nuestras novedades.</p>
+    <Wrapper>
+      <div className="suscribe-form">
+        <div className="info-text">
+          <h2>Suscribete!!</h2>
+          <p>Enterate de todas nuestras novedades.</p>
+        </div>
+        <div className="emailInput">
+          <label htmlFor="email">Ingresa tu Email</label>
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <button type="submit">Suscribirse</button>
+        </div>
       </div>
-      <div className="emailInput">
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
+      <div className="suscribe-image">
+        <img
+          src="https://www.vanidades.com/__export/1634777542231/sites/vanidades/img/2021/10/20/como-cuidar-un-bonsai.jpg_1998528053.jpg"
+          alt="bonsai"
+        />
       </div>
-    </Container>
+    </Wrapper>
   );
 };
 

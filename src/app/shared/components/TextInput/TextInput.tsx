@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { useState } from 'react';
 import './TextInput.css';
 
 type TextInputProps = {
@@ -7,7 +7,6 @@ type TextInputProps = {
   email: boolean;
   id: number;
   setValidInput: (id: number, value: boolean) => void;
-  formState: object;
 };
 
 const TextInput = ({
@@ -16,7 +15,6 @@ const TextInput = ({
   email,
   id,
   setValidInput,
-  formState,
 }: TextInputProps) => {
   const [data, setData] = useState('');
   const [message, setMessage] = useState('');
@@ -31,7 +29,7 @@ const TextInput = ({
       setValidInput(id, false);
     } else if (email) {
       const validEmail =
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
           data
         );
       if (!validEmail) {

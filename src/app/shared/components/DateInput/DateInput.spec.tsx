@@ -26,4 +26,7 @@ test('renders the component', () => {
 
   fireEvent.change(input, { target: { value: '2022-11-05' } });
   component.getByText(/Recargo por día festivo/);
+
+  fireEvent.change(input, { target: { value: '2022-11-06' } });
+  component.getByText(/2022-11-07/);
 });

@@ -27,8 +27,8 @@ const Navbar = ({ cart }: CartProps) => {
         <img className={styles.navbar__logo__image} src={logo} alt="logo" />
         <h2 className={styles.cart__title}>eCeiba</h2>
       </Link>
-      <button>
-        <Link to="/cart" role="link">
+      <button className={styles.navbar__cart_cart_button}>
+        <Link to="/cart" role="link" className="navbar__cart_cart-link">
           <div className={styles.navbar__cart}>
             <img
               className={styles.cart__image}

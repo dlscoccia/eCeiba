@@ -35,7 +35,9 @@ const ImageSlider = ({ slides }: SlidesProps) => {
             key={index}
             data-testid={index}
           >
-            {index === current && <img src={slide.image} alt="slide" />}
+            {index === current && (
+              <img src={slide.image} alt="slide" className="image" />
+            )}
           </div>
         );
       })}

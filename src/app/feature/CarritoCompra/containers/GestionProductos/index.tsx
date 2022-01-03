@@ -1,7 +1,7 @@
 import React from 'react';
 import { Producto } from '../../../Producto/models/Producto';
 import { useEffect } from 'react';
-import Cart from '../../components/Cart/Cart';
+import Cart from '../../components/Carrito';
 
 interface GestionCarritoProps {
   productos: Array<Producto>;

@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Wrapper } from './Cart.styles';
+import { Wrapper } from './Carrito.styles';
 import { connect } from 'react-redux';
-import CartItem from '../CartItem/CartItem';
+import ProductoCarrito from '../ProductoCarrito/';
 import { Link } from 'react-router-dom';
+import { Producto } from 'app/feature/Producto/models/Producto';
+import { EstadoGeneral } from 'app/core/redux/modelo/EstadoGeneral';
 
-const Cart = ({ carrito }: any) => {
+type CarritoProps = {
+  carrito: Producto[];
+};
+
+const Cart: React.FC<CarritoProps> = ({ carrito }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   useEffect(() => {
     let items = 0;
     let price = 0;
 
-    carrito.forEach((item: any) => {
+    carrito.forEach((item: Producto) => {
       items += item.qty;
       price += item.qty * item.price;
     });
@@ -25,7 +31,9 @@ const Cart = ({ carrito }: any) => {
       <div className="cart">
         <div className="cart__items">
           {carrito.length > 0 ? (
-            carrito.map((item: any) => <CartItem key={item.id} item={item} />)
+            carrito.map((item: any) => (
+              <ProductoCarrito key={item.id} item={item} />
+            ))
           ) : (
             <div className="items__empty">
               <h2>No tienes ningun producto agregado</h2>
@@ -55,11 +63,10 @@ const Cart = ({ carrito }: any) => {
   );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: EstadoGeneral) => {
   return {
     carrito: state.productos.carrito,
   };
 };
 
 export default connect(mapStateToProps)(Cart);
-

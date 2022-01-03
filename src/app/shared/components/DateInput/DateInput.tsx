@@ -14,19 +14,22 @@ const DateInput = () => {
   const [holiday, setHoliday] = useState(false);
   const [shippingDay, setShippingDay] = useState('');
 
-  const checkIsWeekend = (date: string) => {
-    const dayOfTheWeek = new Date(date).getDay();
-    if (dayOfTheWeek === 5) {
-      const newDay = addDays(date, 2);
+  const checkIsWeekend = (dateToCHeck: string) => {
+    const dayOfTheWeek = new Date(dateToCHeck).getDay();
+    const saturday = 5;
+    const sunday = 6;
+    const saturdayDiff = 2;
+    if (dayOfTheWeek === saturday) {
+      const newDay = addDays(dateToCHeck, saturdayDiff);
       setShippingDay(newDay);
       return newDay;
-    } else if (dayOfTheWeek === 6) {
-      const newDay = addDays(date, 1);
+    } else if (dayOfTheWeek === sunday) {
+      const newDay = addDays(dateToCHeck, 1);
       setShippingDay(newDay);
       return newDay;
     } else {
-      setShippingDay(date);
-      return date;
+      setShippingDay(dateToCHeck);
+      return dateToCHeck;
     }
   };
 

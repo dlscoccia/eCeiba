@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import CartItem from './CartItem';
+import ProductoCarrito from './index';
 import store from '../../../../core/redux/store';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ const item = {
 };
 
 test('renders content', () => {
-  const component = render(<CartItem item={item} />);
+  const component = render(<ProductoCarrito item={item} />);
   component.getByAltText('PREMNA 6 AÑOS');
   component.getByText('PREMNA 6 AÑOS');
   component.getByText(/Precio unitario/i);

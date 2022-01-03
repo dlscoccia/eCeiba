@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Wrapper } from './CartItem.styles';
+import React, { Dispatch, useState } from 'react';
+import { Wrapper } from './ProductoCarrito.styles';
 import { connect } from 'react-redux';
 import {
   ajustarCantidad,
   borrarProducto,
 } from '../../../../core/redux/acciones/productos/ProductosAcciones';
-import { Producto } from 'app/feature/Producto/models/Producto';
+import { Producto } from '../../../Producto/models/Producto';
+import { Action } from 'redux';
 
 type ArticuloCarritoProps = {
   item: Producto;
@@ -17,12 +18,12 @@ const CartItem: React.FC<ArticuloCarritoProps> = ({
   item,
   ajustarCantidadCarrito,
   borrarProductoCarrito,
-}: any) => {
+}) => {
   const [input, setInput] = useState(item.qty);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
-    ajustarCantidadCarrito(item.id, e.target.value);
+    setInput(+e.target.value);
+    ajustarCantidadCarrito(item.id, +e.target.value);
   };
 
   return (
@@ -65,9 +66,9 @@ const CartItem: React.FC<ArticuloCarritoProps> = ({
   );
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: Dispatch<Action>) => {
   return {
-    ajustarCantidadCarrito: (id: any, value: any) =>
+    ajustarCantidadCarrito: (id: number, value: number) =>
       dispatch(ajustarCantidad(id, value)),
     borrarProductoCarrito: (id: number) => dispatch(borrarProducto(id)),
   };

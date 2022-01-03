@@ -1,3 +1,5 @@
+import { EstadoGeneral } from 'app/core/redux/modelo/EstadoGeneral';
+import { Producto } from 'app/feature/Producto/models/Producto';
 import DateInput from 'app/shared/components/DateInput/DateInput';
 import TextInput from 'app/shared/components/TextInput/TextInput';
 import React, { useState, useEffect } from 'react';
@@ -5,7 +7,11 @@ import { connect } from 'react-redux';
 import { formFields } from '../../models/checkoutFields';
 import { Wrapper } from './Checkout.styles';
 
-const Checkout = ({ carrito }: any) => {
+type CheckoutProps = {
+  carrito: Producto[];
+};
+
+const Checkout: React.FC<CheckoutProps> = ({ carrito }) => {
   const [validInput, setValidInput] = useState([false, false, false, false]);
   const [disableSubmit, setDisableSubmit] = useState(true);
   useEffect(() => {
@@ -61,7 +67,7 @@ const Checkout = ({ carrito }: any) => {
   );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: EstadoGeneral) => {
   return {
     carrito: state.productos.carrito,
   };

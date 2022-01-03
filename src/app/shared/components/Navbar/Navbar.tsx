@@ -4,17 +4,19 @@ import { Wrapper } from './Navbar.styles';
 import logo from '../../../../assets/img/logo.png';
 import { connect } from 'react-redux';
 import { Producto } from '../../../feature/Producto/models/Producto';
+import { EstadoGeneral } from 'app/core/redux/modelo/EstadoGeneral';
 
 type CartProps = {
-  cart: [];
+  carrito: Producto[];
 };
 
-const Navbar = ({ cart }: CartProps) => {
+const Navbar = ({ carrito }: CartProps) => {
   const [cartCount, setCartCount] = useState(0);
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
-    if (window.scrollY >= 150) {
+    const windowScrolled = 150;
+    if (window.scrollY >= windowScrolled) {
       setScrollNav(true);
     } else {
       setScrollNav(false);
@@ -23,14 +25,14 @@ const Navbar = ({ cart }: CartProps) => {
 
   useEffect(() => {
     let count = 0;
-    cart.forEach((item: Producto) => {
+    carrito.forEach((item: Producto) => {
       count += item.qty;
     });
 
     setCartCount(count);
 
     window.addEventListener('scroll', changeNav);
-  }, [cart, cartCount]);
+  }, [carrito, cartCount]);
 
   return (
     <Wrapper>
@@ -61,9 +63,9 @@ const Navbar = ({ cart }: CartProps) => {
   );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: EstadoGeneral) => {
   return {
-    cart: state.productos.carrito,
+    carrito: state.productos.carrito,
   };
 };
 

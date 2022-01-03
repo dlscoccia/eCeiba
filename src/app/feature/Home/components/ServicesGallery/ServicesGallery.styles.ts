@@ -43,4 +43,19 @@ export const Wrapper = styled.div`
     font-family: var(--text-font);
     width: 90%;
   }
+
+  @media (max-width: 768px) {
+    .services {
+      flex-direction: column;
+      width: 60%;
+      gap: 50px;
+    }
+    .service_header {
+      font-size: 70px;
+      text-align: center;
+    }
+    .service:nth-child(2) {
+      margin: 20px 0;
+    }
+  }
 `;

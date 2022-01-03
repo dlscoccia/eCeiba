@@ -38,9 +38,11 @@ export const HeroBg = styled.div`
 export const VideoBg = styled.video`
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   background-color: #232a34;
+  @media (max-width: 480px) {
+    object-position: -200px center;
+  }
 `;
 
 export const HeroContent = styled.div`
@@ -58,6 +60,19 @@ export const HeroContent = styled.div`
     font-family: var(--text-font);
     color: var(--light-color);
     width: 200px;
+  }
+
+  @media (max-width: 768px) {
+    right: 60px;
+    h2 {
+      font-size: 40px;
+    }
+  }
+  @media (max-width: 480px) {
+    right: 30px;
+    h2 {
+      font-size: 30px;
+    }
   }
 `;
 

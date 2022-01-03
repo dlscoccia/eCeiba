@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { BsArrowRightSquare, BsArrowLeftSquare } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { Wrapper } from './ImageSlider.styles';
 
@@ -23,14 +23,9 @@ const ImageSlider = ({ slides }: SlidesProps) => {
   return (
     <Wrapper>
       <section className="slider">
-        <FaArrowAltCircleLeft
+        <BsArrowLeftSquare
           className="left-arrow"
           onClick={prevSlide}
-          role="button"
-        />
-        <FaArrowAltCircleRight
-          className="right-arrow"
-          onClick={nextSlide}
           role="button"
         />
         {slides.map((slide, index) => {
@@ -46,6 +41,11 @@ const ImageSlider = ({ slides }: SlidesProps) => {
             </div>
           );
         })}
+        <BsArrowRightSquare
+          className="right-arrow"
+          onClick={nextSlide}
+          role="button"
+        />
       </section>
       <Link to="/productos" className="productosBtn">
         Nuestros productos

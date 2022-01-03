@@ -110,6 +110,7 @@ export const Wrapper = styled.div`
       }
       .cart__summary {
         gap: 1rem;
+        margin-top: 2rem;
       }
     }
   }

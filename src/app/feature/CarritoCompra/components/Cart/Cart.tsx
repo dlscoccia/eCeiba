@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const Cart = ({ carrito }: any) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-
   useEffect(() => {
     let items = 0;
     let price = 0;
@@ -63,3 +62,4 @@ const mapStateToProps = (state: any) => {
 };
 
 export default connect(mapStateToProps)(Cart);
+

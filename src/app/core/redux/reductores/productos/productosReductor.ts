@@ -1,11 +1,9 @@
 import {
-  AGREGAR_PRODUCTO,
-  ELIMINAR_PRODUCTO,
   LISTAR_PRODUCTOS,
-  ADD_TO_CART,
-  ADJUST_ITEM_QTY,
-  LOAD_CURRENT_ITEM,
-  REMOVE_FROM_CART,
+  AGREGAR_PRODUCTO_AL_CARRO,
+  AJUSTAR_CANTIDAD,
+  CARGAR_PRODUCTO,
+  BORRAR_PRODUCTO_DEL_CARRO,
   TiposAccionesProducto,
 } from '../../acciones/productos/ProductosTiposAcciones';
 import { EstadoProducto } from '../../modelo/EstadoProducto';
@@ -22,13 +20,13 @@ const initialState: EstadoProducto = {
     image: '',
     qty: 0,
     species: '',
+    age: 0,
   },
 };
-
-export default function (
+const productosReductor = (
   state = initialState,
   action: TiposAccionesProducto
-): EstadoProducto {
+): EstadoProducto => {
   switch (action.type) {
     case LISTAR_PRODUCTOS: {
       const productos = action.payload;
@@ -37,30 +35,10 @@ export default function (
         productos,
       };
     }
-    case AGREGAR_PRODUCTO: {
-      const producto = action.payload;
-      return {
-        ...state,
-        productos: [...state.productos, producto],
-      };
-    }
-
-    case ELIMINAR_PRODUCTO: {
-      const producto = action.payload;
-      return {
-        ...state,
-        productos: [
-          ...state.productos.filter((p) => p.title !== producto.title),
-        ],
-      };
-    }
-
-    case ADD_TO_CART:
-      // Great Item data from products array
+    case AGREGAR_PRODUCTO_AL_CARRO:
       const item = state.productos.find(
         (product) => product.id === action.payload.id
       );
-      // Check if Item is in cart already
       const inCart = state.carrito.find((item) =>
         item.id === action.payload.id ? true : false
       );
@@ -79,12 +57,12 @@ export default function (
             )
           : [...state.carrito, { ...item, qty: 1 }],
       };
-    case REMOVE_FROM_CART:
+    case BORRAR_PRODUCTO_DEL_CARRO:
       return {
         ...state,
         carrito: state.carrito.filter((item) => item.id !== action.payload.id),
       };
-    case ADJUST_ITEM_QTY:
+    case AJUSTAR_CANTIDAD:
       return {
         ...state,
         carrito: state.carrito.map((item) =>
@@ -93,7 +71,7 @@ export default function (
             : item
         ),
       };
-    case LOAD_CURRENT_ITEM:
+    case CARGAR_PRODUCTO:
       return {
         ...state,
         currentItem: action.payload,
@@ -102,4 +80,6 @@ export default function (
     default:
       return state;
   }
-}
+};
+
+export default productosReductor;

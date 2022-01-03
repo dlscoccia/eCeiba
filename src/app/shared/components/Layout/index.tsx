@@ -1,7 +1,6 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { DivContainer } from './styles';
-import { Helmet } from 'react-helmet';
 
 interface LayoutProps {
   title: string;
@@ -15,13 +14,6 @@ export const Layout: React.FC<LayoutProps> = ({
 }) => {
   return (
     <>
-      <Helmet>
-        {
-          // eslint-disable-next-line
-          title && <title>eCeiba | {title}</title>
-        }
-        {description && <meta name="description" content={description} />}
-      </Helmet>
       <DivContainer>{children}</DivContainer>
     </>
   );

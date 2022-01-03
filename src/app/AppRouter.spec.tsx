@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render as rtlRender } from '@testing-library/react';
+import { render as rtlRender } from '@testing-library/react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { AppRouter } from './AppRouter';
 import { Provider } from 'react-redux';

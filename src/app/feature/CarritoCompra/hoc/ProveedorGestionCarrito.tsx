@@ -1,6 +1,4 @@
 import {
-  agregarNuevoProducto,
-  eliminarProducto,
   listarProductosAsync,
   addToCart,
   removeFromCart,
@@ -17,8 +15,6 @@ const mapStateToProps = (state: EstadoGeneral) => {
 
 export const ProveedorGestionProductos = connect(mapStateToProps, {
   listarProductos: listarProductosAsync,
-  agregarNuevoProducto,
-  eliminarProducto,
   addToCart,
   removeFromCart,
   adjustItemQty,

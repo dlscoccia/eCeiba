@@ -71,4 +71,10 @@ export const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 375px) {
+    .cart__title {
+      display: none;
+    }
+  }
 `;

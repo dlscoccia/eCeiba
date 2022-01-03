@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,8 +18,7 @@ export const Wrapper = styled.div`
 
   .image {
     width: 1000px;
-    height: 600px;
-    border-radius: 10px;
+    height: auto;
   }
 
   .right-arrow {
@@ -25,7 +26,9 @@ export const Wrapper = styled.div`
     top: 50%;
     right: 32px;
     font-size: 3rem;
-    color: #000;
+    color: var(--light-color);
+    background: var(--dark-color);
+    border-radius: 10px;
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -36,7 +39,9 @@ export const Wrapper = styled.div`
     top: 50%;
     left: 32px;
     font-size: 3rem;
-    color: #000;
+    color: var(--light-color);
+    background: var(--dark-color);
+    border-radius: 10px;
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -68,6 +73,43 @@ export const Wrapper = styled.div`
     &:hover {
       transform: scale(1.1);
       transition: transform 0.4s ease;
+    }
+  }
+
+  @media (max-width: 1240px) {
+    .image {
+      width: 800px;
+    }
+  }
+  @media (max-width: 1080px) {
+    .image {
+      width: 700px;
+    }
+  }
+  @media (max-width: 840px) {
+    .image {
+      width: 600px;
+    }
+  }
+  @media (max-width: 768px) {
+    margin-top: 500px;
+    .image {
+      width: 500px;
+    }
+    .slider {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    margin: 650px auto 0 auto;
+
+    .image {
+      width: 400px;
+    }
+  }
+  @media (max-width: 480px) {
+    .image {
+      width: 300px;
     }
   }
 `;

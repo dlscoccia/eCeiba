@@ -23,7 +23,8 @@
       "price": 140000,
       "image": "https://static.wixstatic.com/media/dcb053_54d4f642967740b09a3611287149c19c~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_54d4f642967740b09a3611287149c19c~mv2.webp",
       "qty": 0,
-      "species": "arbolito de navidad"
+      "species": "arbolito de navidad",
+      "age": 6
     },
     {
       "id": 2,
@@ -32,16 +33,18 @@
       "price": 85000,
       "image": "https://static.wixstatic.com/media/dcb053_c5b816bb573b49529bb40d4d1caff969~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_c5b816bb573b49529bb40d4d1caff969~mv2.webp",
       "qty": 0,
-      "species": "arbolito de navidad"
+      "species": "arbolito de navidad",
+      "age": 3
     },
     {
       "id": 3,
-      "title": "OLMO CHINO 6 AÑOS",
+      "title": "LIMONCILLO 8 AÑOS",
       "description": "Esta especie es muy apetecida en el bonsai, usada en muchas partes del mundo es un árbol de mediana altura, de madera muy densa y de gran manipulación de sus ramas. Es un árbol de exterior, requiriendo grandes cantidades de radiación solar. Igualmente el agua es muy importante en esta especie. ",
       "price": 230000,
       "image": "https://static.wixstatic.com/media/dcb053_a0c4fef0717048c593a7d798f6ce9947~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_a0c4fef0717048c593a7d798f6ce9947~mv2.webp",
       "qty": 0,
-      "species": "arbolito de navidad"
+      "species": "arbolito de navidad",
+      "age": 8
     },
     {
       "id": 4,
@@ -50,25 +53,28 @@
       "price": 195000,
       "image": "https://static.wixstatic.com/media/dcb053_14ea0c1f335b4964b1329cefc1459bc0~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_14ea0c1f335b4964b1329cefc1459bc0~mv2.webp",
       "qty": 0,
-      "species": "arbolito de navidad"
+      "species": "arbolito de navidad",
+      "age": 8
     },
     {
       "id": 5,
-      "title": "PREMNA 6 AÑOS",
+      "title": "PREMNA 9 AÑOS",
       "description": "Esta especie es muy apetecida en el bonsai, usada en muchas partes del mundo es un árbol de mediana altura, de madera muy densa y de gran manipulación de sus ramas. Es un árbol de exterior, requiriendo grandes cantidades de radiación solar. Igualmente el agua es muy importante en esta especie. ",
-      "price": 140000,
+      "price": 180000,
       "image": "https://static.wixstatic.com/media/dcb053_27902d540fdd44cdaffb342cfd6b3ddc~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_27902d540fdd44cdaffb342cfd6b3ddc~mv2.webp",
       "qty": 0,
-      "species": "arbolito de navidad"
+      "species": "arbolito de navidad",
+      "age": 9
     },
     {
       "id": 6,
-      "title": "FUKIANTE 3 AÑOS",
+      "title": "FUKIANTE 4 AÑOS",
       "description": "Esta especie es muy apetecida en el bonsai, usada en muchas partes del mundo es un árbol de mediana altura, de madera muy densa y de gran manipulación de sus ramas. Es un árbol de exterior, requiriendo grandes cantidades de radiación solar. Igualmente el agua es muy importante en esta especie. ",
-      "price": 85000,
+      "price": 95000,
       "image": "https://static.wixstatic.com/media/dcb053_f688c7f41a8049788691752d22390542~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_f688c7f41a8049788691752d22390542~mv2.webp",
       "qty": 0,
-      "species": "arbolito de navidad"
+      "species": "arbolito de navidad",
+      "age": 4
     },
     {
       "id": 7,
@@ -77,16 +83,18 @@
       "price": 230000,
       "image": "https://static.wixstatic.com/media/dcb053_7f203feb7be7466095be112d9d7ad8d0~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_7f203feb7be7466095be112d9d7ad8d0~mv2.webp",
       "qty": 0,
-      "species": "arbolito de navidad"
+      "species": "arbolito de navidad",
+      "age": 6
     },
     {
       "id": 8,
-      "title": "AZALEA 8 AÑOS",
+      "title": "BOYACAN 7 AÑOS",
       "description": "Esta especie es muy apetecida en el bonsai, usada en muchas partes del mundo es un árbol de mediana altura, de madera muy densa y de gran manipulación de sus ramas. Es un árbol de exterior, requiriendo grandes cantidades de radiación solar. Igualmente el agua es muy importante en esta especie. ",
-      "price": 195000,
+      "price": 295000,
       "image": "https://static.wixstatic.com/media/dcb053_f95e435615af46808976577c515caf55~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_f95e435615af46808976577c515caf55~mv2.webp",
       "qty": 0,
-      "species": "arbolito de navidad"
+      "species": "arbolito de navidad",
+      "age": 7
     }
   ]
 }

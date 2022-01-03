@@ -6,4 +6,5 @@ export interface Producto {
   price: number;
   title: string;
   qty: number;
+  age: number;
 }

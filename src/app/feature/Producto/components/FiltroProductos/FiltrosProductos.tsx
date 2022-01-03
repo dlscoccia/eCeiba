@@ -1,19 +1,44 @@
 import React from 'react';
-import styled from 'styled-components';
+import data from '../../../../core/api/db.json';
+import { Wrapper } from './FiltroProductos.styles';
 
-const Container = styled.div`
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-`;
-
-type FilterProps = {
-  products: [];
+type FiltroProps = {
+  etiqueta: string;
+  productos: [];
+  filtro: string;
+  condicion: string;
+  setListaFiltrada: React.Dispatch<any>;
 };
 
-const FiltrosProductos = () => {
-  return <Container>a</Container>;
+const FiltrosProductos: React.FC<FiltroProps> = ({
+  etiqueta,
+  productos,
+  filtro,
+  condicion,
+  setListaFiltrada,
+}) => {
+  const handleFilter = (filter: string, condition: string) => {
+    if (condicion === 'menor') {
+      const nuevaLista = productos.sort(
+        (a: any, b: any) => a[filtro] - b[filtro]
+      );
+      setListaFiltrada(nuevaLista);
+    } else if (condicion === 'mayor') {
+      const nuevaLista = data.productos.sort(
+        (a: any, b: any) => b[filtro] - a[filtro]
+      );
+      setListaFiltrada(nuevaLista);
+    } else {
+      setListaFiltrada(productos);
+    }
+  };
+  return (
+    <Wrapper>
+      <button onClick={() => handleFilter(filtro, condicion)}>
+        {etiqueta}
+      </button>
+    </Wrapper>
+  );
 };
 
 export default FiltrosProductos;

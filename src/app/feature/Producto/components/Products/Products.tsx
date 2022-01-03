@@ -2,36 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { Wrapper } from './Products.styles';
 import { connect } from 'react-redux';
 import Product from '../Product/Product';
+import FiltrosProductos from '../FiltroProductos/FiltrosProductos';
+import { opcionesFiltros } from '../../models/opcionesFiltros';
 
 const Products = ({ productos }: any) => {
-  const [filteredProducts, setFilteredProducts] = useState(productos);
+  const todosProductos = productos;
+  const [productosFiltrados, setListaFiltrada] = useState([]);
 
-  const handleFilter = (filter: string, condition: string) => {
-    let newArray = [];
-    if (condition === 'low') {
-      newArray = productos.sort((a: any, b: any) => a[filter] - b[filter]);
-    } else if (condition === 'high') {
-      newArray = productos.sort((a: any, b: any) => b[filter] - a[filter]);
-    } else {
-      setFilteredProducts(productos);
-    }
-    setFilteredProducts(newArray);
-  };
-
+  useEffect(() => {
+    setListaFiltrada(todosProductos);
+  }, [todosProductos]);
   return (
     <Wrapper>
       <div className="background"></div>
       <div className="products">
         <h2>Productos Destacados</h2>
         <div className="filters">
-          <button onClick={() => handleFilter('price', 'low')}>
-            Menor precio
-          </button>
-          <button onClick={() => handleFilter('price', 'high')}>
-            Mayor precio
-          </button>
+          {opcionesFiltros.map((opciones) => (
+            <FiltrosProductos
+              {...opciones}
+              productos={productos}
+              setListaFiltrada={setListaFiltrada}
+            />
+          ))}
         </div>
-        {filteredProducts.map((product: any) => (
+        {productosFiltrados.map((product: any) => (
           <Product key={product.id} product={product} />
         ))}
       </div>

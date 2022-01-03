@@ -1,24 +1,14 @@
 import { EstadoProducto } from 'app/core/redux/modelo/EstadoProducto';
 import { Producto } from 'app/feature/Producto/models/Producto';
-import { agregarNuevoProducto } from 'app/core/redux/acciones/productos/ProductosAcciones';
-import reductorProductos from './productosReductor';
+import {
+  addToCart,
+  adjustItemQty,
+  loadCurrentItem,
+  removeFromCart,
+} from 'app/core/redux/acciones/productos/ProductosAcciones';
 
 describe('Reductor productos', () => {
-  it('debería agregar productos', () => {
-    // Arrange
-    const estadoInicial: EstadoProducto = {
-      productos: [],
-      carrito: [],
-      currentItem: {
-        id: 0,
-        title: '',
-        description: '',
-        price: 0,
-        image: '',
-        qty: 0,
-        species: '',
-      },
-    };
+  it('Verifica las acciones', () => {
     const nuevoProducto: Producto = {
       id: 1,
       title: 'PREMNA 6 AÑOS',
@@ -26,22 +16,22 @@ describe('Reductor productos', () => {
         'Esta especie es muy apetecida en el bonsai, usada en muchas partes del mundo es un árbol de mediana altura, de madera muy densa y de gran manipulación de sus ramas. Es un árbol de exterior, requiriendo grandes cantidades de radiación solar. Igualmente el agua es muy importante en esta especie. ',
       price: 140000,
       image:
-        'https://casadelbonsai.com/wp-content/uploads/2021/05/casadelbonsai_PRENMA_-250x250.jpg',
+        'https://static.wixstatic.com/media/dcb053_54d4f642967740b09a3611287149c19c~mv2.jpg/v1/fill/w_474,h_316,al_c,q_80,usm_0.66_1.00_0.01/dcb053_54d4f642967740b09a3611287149c19c~mv2.webp',
       qty: 0,
       species: 'arbolito de navidad',
-    };
-    const estadoEsperado: EstadoProducto = {
-      ...estadoInicial,
-      productos: [nuevoProducto],
+      age: 6,
     };
 
-    // Act
-    const nuevoEstado = reductorProductos(
-      estadoInicial,
-      agregarNuevoProducto(nuevoProducto)
-    );
+    let nuevoEstado = addToCart(nuevoProducto.id);
+    expect(nuevoEstado.type).toBe('AGREGAR_PRODUCTO_AL_CARRO');
 
-    // Assert
-    expect(nuevoEstado).toStrictEqual(estadoEsperado);
+    nuevoEstado = removeFromCart(nuevoProducto.id);
+    expect(nuevoEstado.type).toBe('BORRAR_PRODUCTO_DEL_CARRO');
+
+    nuevoEstado = adjustItemQty(nuevoProducto.id, 6);
+    expect(nuevoEstado.type).toBe('AJUSTAR_CANTIDAD');
+
+    nuevoEstado = loadCurrentItem(nuevoProducto);
+    expect(nuevoEstado.type).toBe('CARGAR_PRODUCTO');
   });
 });

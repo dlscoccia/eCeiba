@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   font-family: var(--text-font);
   display: flex;
   width: 100%;
+  min-height: 95vh;
   justify-content: space-evenly;
 
   .form {

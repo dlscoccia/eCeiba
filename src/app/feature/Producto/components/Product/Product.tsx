@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import {
   loadCurrentItem,
   addToCart,
-} from '../../../../core/redux/acciones/products/ProductsActions';
+} from '../../../../core/redux/acciones/productos/ProductosAcciones';
 
 const Product = ({ product, addToCart, loadCurrentItem }: any) => {
   return (

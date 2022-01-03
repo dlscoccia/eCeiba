@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   margin: 100px 0;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  .suscribe-form,
-  .suscribe-image {
-    width: 50%;
+  width: 90%;
+  .suscribe-form {
+    width: 30%;
   }
 
   .suscribe-form {
@@ -53,6 +53,20 @@ export const Wrapper = styled.div`
   }
 
   .suscribe-image img {
-    height: 400px;
+    height: 300px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 100px auto;
+    .suscribe-form {
+      width: 60%;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .suscribe-image img {
+      height: 200px;
+    }
   }
 `;

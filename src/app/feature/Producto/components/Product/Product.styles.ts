@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin: 50px 0;
+  margin: 50px auto;
   transition: transform 0.5s ease;
-  background: #fff;
-
+  width: 90%;
   &:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
     transition: transform 0.5s ease;
   }
-  .product {
-    width: 900px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 
+  .product {
+    background: #fff;
+    width: 70%;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border: 3px solid var(--light-color);
     display: flex;
     justify-content: space-between;
@@ -80,5 +81,32 @@ export const Wrapper = styled.div`
   .buttons__add {
     background: var(--dark-color);
     color: var(--light-color);
+  }
+
+  @media (max-width: 1240px) {
+    .product {
+      width: 80%;
+    }
+  }
+  @media (max-width: 1024px) {
+    .product {
+      width: 90%;
+    }
+    .details__desc {
+      font-size: 0.7rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .product {
+      flex-direction: column;
+      text-align: center;
+    }
+    .product__image {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .product__buttons {
+      flex-direction: row;
+    }
   }
 `;

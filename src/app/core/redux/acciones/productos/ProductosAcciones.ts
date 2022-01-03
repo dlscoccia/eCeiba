@@ -1,17 +1,12 @@
 import {
-  AGREGAR_PRODUCTO,
-  ELIMINAR_PRODUCTO,
-  LISTAR_PRODUCTOS,
   TiposAccionesProducto,
-  ADD_TO_CART,
-  ADJUST_ITEM_QTY,
-  LOAD_CURRENT_ITEM,
-  REMOVE_FROM_CART,
+  LISTAR_PRODUCTOS,
+  AGREGAR_PRODUCTO_AL_CARRO,
+  AJUSTAR_CANTIDAD,
+  CARGAR_PRODUCTO,
+  BORRAR_PRODUCTO_DEL_CARRO,
 } from './ProductosTiposAcciones';
 import { Producto } from '../../../../feature/Producto/models/Producto';
-import { Product } from '../../../../feature/Producto/models/Product';
-//
-
 import { ProductoRepositorio } from '../../../../core/api/productos.repositorio';
 
 export function listarProductos(
@@ -23,22 +18,6 @@ export function listarProductos(
   };
 }
 
-export function agregarNuevoProducto(
-  producto: Producto
-): TiposAccionesProducto {
-  return {
-    type: AGREGAR_PRODUCTO,
-    payload: producto,
-  };
-}
-
-export function eliminarProducto(producto: Producto): TiposAccionesProducto {
-  return {
-    type: ELIMINAR_PRODUCTO,
-    payload: producto,
-  };
-}
-
 export function listarProductosAsync() {
   return function (dispacth: any) {
     ProductoRepositorio.getAllProducts().then((respuesta: any) =>
@@ -47,37 +26,37 @@ export function listarProductosAsync() {
   };
 }
 
-export const addToCart = (itemID: number) => {
+export const addToCart = (productoID: number) => {
   return {
-    type: ADD_TO_CART,
+    type: AGREGAR_PRODUCTO_AL_CARRO,
     payload: {
-      id: itemID,
+      id: productoID,
     },
   };
 };
 
-export const removeFromCart = (itemID: number) => {
+export const removeFromCart = (productoID: number) => {
   return {
-    type: REMOVE_FROM_CART,
+    type: BORRAR_PRODUCTO_DEL_CARRO,
     payload: {
-      id: itemID,
+      id: productoID,
     },
   };
 };
 
-export const adjustItemQty = (itemID: number, qty: number) => {
+export const adjustItemQty = (productoID: number, qty: number) => {
   return {
-    type: ADJUST_ITEM_QTY,
+    type: AJUSTAR_CANTIDAD,
     payload: {
-      id: itemID,
+      id: productoID,
       qty,
     },
   };
 };
 
-export const loadCurrentItem = (item: Product) => {
+export const loadCurrentItem = (producto: Producto) => {
   return {
-    type: LOAD_CURRENT_ITEM,
-    payload: item,
+    type: CARGAR_PRODUCTO,
+    payload: producto,
   };
 };

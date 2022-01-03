@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render as rtlRender } from '@testing-library/react';
-import data from '../../../../core/api/db.json';
-import FiltrosProductos from './FiltrosProductos';
+import FiltrosProductos from './index';
 import { Provider } from 'react-redux';
 import store from 'app/core/redux/store';
 import { BrowserRouter as Router } from 'react-router-dom';

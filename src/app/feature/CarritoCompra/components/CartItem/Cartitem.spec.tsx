@@ -22,6 +22,8 @@ const item = {
   image:
     'https://casadelbonsai.com/wp-content/uploads/2021/05/casadelbonsai_PRENMA_-250x250.jpg',
   qty: 5,
+  age: 6,
+  species: 'arbolito',
 };
 
 test('renders content', () => {

@@ -2,7 +2,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { Producto } from '../../models/Producto';
 import { useEffect } from 'react';
-import Products from '../../components/Products/Products';
+import ListarProductos from '../../components/ListarProductos';
 
 interface GestionProductosProps {
   productos: Array<Producto>;
@@ -18,7 +18,7 @@ export const GestionProductos: React.FC<GestionProductosProps> = ({
   useEffect(() => {
     listarProductos();
   }, [listarProductos]);
-  return <Products />;
+  return <ListarProductos />;
 };
 
 GestionProductos.propTypes = {

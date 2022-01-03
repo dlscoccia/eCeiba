@@ -26,7 +26,7 @@ export function listarProductosAsync() {
   };
 }
 
-export const addToCart = (productoID: number) => {
+export const agregarProducto = (productoID: number) => {
   return {
     type: AGREGAR_PRODUCTO_AL_CARRO,
     payload: {
@@ -35,7 +35,7 @@ export const addToCart = (productoID: number) => {
   };
 };
 
-export const removeFromCart = (productoID: number) => {
+export const borrarProducto = (productoID: number) => {
   return {
     type: BORRAR_PRODUCTO_DEL_CARRO,
     payload: {
@@ -44,7 +44,7 @@ export const removeFromCart = (productoID: number) => {
   };
 };
 
-export const adjustItemQty = (productoID: number, qty: number) => {
+export const ajustarCantidad = (productoID: number, qty: number) => {
   return {
     type: AJUSTAR_CANTIDAD,
     payload: {
@@ -54,7 +54,7 @@ export const adjustItemQty = (productoID: number, qty: number) => {
   };
 };
 
-export const loadCurrentItem = (producto: Producto) => {
+export const cargarProducto = (producto: Producto) => {
   return {
     type: CARGAR_PRODUCTO,
     payload: producto,

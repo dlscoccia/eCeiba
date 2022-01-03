@@ -10,9 +10,9 @@ const video = require('../../../../../assets/videos/hero.mp4');
 const VideoBanner = () => {
   return (
     <HeroContainer id="home">
-      <HeroBg>
+      {/*       <HeroBg>
         <VideoBg autoPlay loop muted src={video} />
-      </HeroBg>
+      </HeroBg> */}
       <HeroContent>
         <h2>El Bonsái es un arte viviente</h2>
       </HeroContent>

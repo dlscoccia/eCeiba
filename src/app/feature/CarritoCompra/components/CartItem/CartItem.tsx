@@ -3,16 +3,16 @@ import { Wrapper } from './CartItem.styles';
 
 import { connect } from 'react-redux';
 import {
-  adjustItemQty,
-  removeFromCart,
+  ajustarCantidad,
+  borrarProducto,
 } from '../../../../core/redux/acciones/productos/ProductosAcciones';
 
-const CartItem = ({ item, adjustQty, removeFromCart }: any) => {
+const CartItem = ({ item, ajustarCantidad, borrarProducto }: any) => {
   const [input, setInput] = useState(item.qty);
 
   const onChangeHandler = (e: any) => {
     setInput(e.target.value);
-    adjustQty(item.id, e.target.value);
+    ajustarCantidad(item.id, e.target.value);
   };
 
   return (
@@ -40,7 +40,7 @@ const CartItem = ({ item, adjustQty, removeFromCart }: any) => {
             </div>
             <button
               id="delete-button"
-              onClick={() => removeFromCart(item.id)}
+              onClick={() => borrarProducto(item.id)}
               className="actions__deleteItemBtn"
             >
               <img
@@ -57,8 +57,9 @@ const CartItem = ({ item, adjustQty, removeFromCart }: any) => {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    adjustQty: (id: any, value: any) => dispatch(adjustItemQty(id, value)),
-    removeFromCart: (id: number) => dispatch(removeFromCart(id)),
+    ajustarCantidad: (id: any, value: any) =>
+      dispatch(ajustarCantidad(id, value)),
+    borrarProducto: (id: number) => dispatch(borrarProducto(id)),
   };
 };
 

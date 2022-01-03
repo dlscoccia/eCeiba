@@ -1,10 +1,10 @@
 import { EstadoProducto } from 'app/core/redux/modelo/EstadoProducto';
 import { Producto } from 'app/feature/Producto/models/Producto';
 import {
-  addToCart,
-  adjustItemQty,
-  loadCurrentItem,
-  removeFromCart,
+  agregarProducto,
+  ajustarCantidad,
+  cargarProducto,
+  borrarProducto,
 } from 'app/core/redux/acciones/productos/ProductosAcciones';
 
 describe('Reductor productos', () => {
@@ -22,16 +22,16 @@ describe('Reductor productos', () => {
       age: 6,
     };
 
-    let nuevoEstado = addToCart(nuevoProducto.id);
+    let nuevoEstado = agregarProducto(nuevoProducto.id);
     expect(nuevoEstado.type).toBe('AGREGAR_PRODUCTO_AL_CARRO');
 
-    nuevoEstado = removeFromCart(nuevoProducto.id);
+    nuevoEstado = borrarProducto(nuevoProducto.id);
     expect(nuevoEstado.type).toBe('BORRAR_PRODUCTO_DEL_CARRO');
 
-    nuevoEstado = adjustItemQty(nuevoProducto.id, 6);
+    nuevoEstado = ajustarCantidad(nuevoProducto.id, 6);
     expect(nuevoEstado.type).toBe('AJUSTAR_CANTIDAD');
 
-    nuevoEstado = loadCurrentItem(nuevoProducto);
+    nuevoEstado = cargarProducto(nuevoProducto);
     expect(nuevoEstado.type).toBe('CARGAR_PRODUCTO');
   });
 });

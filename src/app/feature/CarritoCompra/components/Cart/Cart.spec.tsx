@@ -25,7 +25,6 @@ test('Renders the cart', () => {
 });
 test('Renders the cart', () => {
   const carrito = [productos[0]];
-  console.log(carrito);
   const component = render(<Cart carrito={carrito}></Cart>);
-  component.debug();
+  expect(component).toBeDefined();
 });

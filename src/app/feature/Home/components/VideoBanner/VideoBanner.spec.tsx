@@ -6,5 +6,5 @@ import VideoBanner from './VideoBanner';
 test('Renders the component', () => {
   const component = render(<VideoBanner />);
   component.getByText('El Bonsái es un arte viviente');
-  component.container.querySelector('video');
+  // component.container.querySelector('video');
 });

@@ -1,10 +1,11 @@
 import React from 'react';
 import data from '../../../../core/api/db.json';
 import { Wrapper } from './FiltroProductos.styles';
+import { Producto } from '../../models/Producto';
 
 type FiltroProps = {
   etiqueta: string;
-  productos: [];
+  productos: Producto[];
   filtro: string;
   condicion: string;
   setListaFiltrada: React.Dispatch<any>;

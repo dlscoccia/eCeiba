@@ -17,7 +17,7 @@ test('renders content', () => {
   const component = render(<Navbar />);
   component.getByText('eCeiba');
   component.getByAltText('logo');
-  component.getByAltText('shopping cart');
+  component.container.querySelector('svg');
   component.getByText('0');
 });
 

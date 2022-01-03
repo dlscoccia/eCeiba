@@ -1,34 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import './App.css';
-import { connect } from 'react-redux';
-import Navbar from './shared/Navbar/Navbar';
-import ProductType from './core/redux/Shopping/shopping-reducer';
-import Footer from './shared/components/Footer/Footer';
-import { AppRouter } from './AppRouter';
+import { AppRouter } from 'app/AppRouter';
+import { GlobalErrorBoundary } from './core/errors/GlobalErrorBoundary';
+import { Provider } from 'react-redux';
+import store from 'app/core/redux/store';
 
-type Props = {
-  current: typeof ProductType;
-};
-
-function App({ current }: Props) {
+function App() {
   return (
-    <Router>
-      <div className="app">
-        <Navbar />
-        <Switch>
-          <AppRouter />
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+    <GlobalErrorBoundary>
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
+    </GlobalErrorBoundary>
   );
 }
 
-const mapStateToProps = (state: any) => {
-  return {
-    current: state.shop.currentItem,
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;

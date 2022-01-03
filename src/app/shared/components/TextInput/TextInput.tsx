@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TextInput.css';
+import { Wrapper } from './TextInput.styles';
 
 type TextInputProps = {
   label: string;
@@ -46,8 +46,8 @@ const TextInput = ({
   };
 
   return (
-    <div>
-      <label htmlFor={label}>{label}</label>
+    <Wrapper>
+      <label htmlFor={label}>{label.toUpperCase()}</label>
       <input
         type={email ? 'email' : 'text'}
         id={label}
@@ -57,8 +57,8 @@ const TextInput = ({
         onChange={(e) => handleInputChange(e)}
         onBlur={validateInput}
       />
-      {message.length > 0 && <span>{message}</span>}
-    </div>
+      {message.length > 0 && <span className="message">{message}</span>}
+    </Wrapper>
   );
 };
 

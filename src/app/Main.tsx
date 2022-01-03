@@ -1,31 +1,18 @@
-import React from 'react';
-import ImageSlider from './feature/components/ImageSlider/ImageSlider';
-import Productos from './feature/components/Products/Products';
-import SliderData from './core/api/SliderData';
-import ServicesGallery from './feature/components/ServicesGallery/ServicesGallery';
-import VideoBanner from './feature/components/VideoBanner/VideoBanner';
-import Suscribete from './feature/components/Suscribete/Suscribete';
+import * as React from 'react';
+import { Layout } from './shared/components/Layout';
+import VideoBanner from './feature/Home/components/VideoBanner/VideoBanner';
+import ImageSlider from './feature/Home/components/ImageSlider/ImageSlider';
+import { SliderData } from './core/api/slider';
+import ServicesGallery from './feature/Home/components/ServicesGallery/ServicesGallery';
+import Suscribete from './feature/Home/components/Suscribete/Suscribete';
 
-export type CartItemType = {
-  id: number;
-  category: string;
-  description: string;
-  image: string;
-  price: number;
-  title: string;
-  qty: number;
-};
+const MainPage = () => (
+  <Layout title="Inicio" description="">
+    <VideoBanner />
+    <ServicesGallery />
+    <ImageSlider slides={SliderData} />
+    <Suscribete />
+  </Layout>
+);
 
-const Main = () => {
-  return (
-    <>
-      <VideoBanner />
-      <ServicesGallery />
-      <ImageSlider slides={SliderData} />
-      <Productos />
-      <Suscribete />
-    </>
-  );
-};
-
-export default Main;
+export default MainPage;

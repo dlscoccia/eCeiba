@@ -14,7 +14,7 @@ test('Renders the component', () => {
     />
   );
   expect(component).toBeDefined();
-  component.getByText('nombre');
+  component.getByText('NOMBRE');
 
   let input = component.getByPlaceholderText('nombre');
   expect(input).toHaveValue('');
@@ -33,7 +33,7 @@ test('Renders the component', () => {
     />
   );
   expect(component).toBeDefined();
-  component.getByText('email');
+  component.getByText('EMAIL');
 
   input = component.getByPlaceholderText('email');
   expect(input).toHaveValue('');

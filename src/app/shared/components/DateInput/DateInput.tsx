@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './DateInput.css';
-import holidays from '../../../core/api/holidays.json';
+import { Wrapper } from './DateInput.styles';
+import data from '../../../core/api/db.json';
 
 const addDays = (dateToAdd: string, days: number) => {
   const newDate = new Date(dateToAdd);
@@ -31,7 +31,7 @@ const DateInput = () => {
   };
 
   const chekIsHoliday = (dateToCheck: string) => {
-    const isHoliday = holidays[0].holidays.includes(dateToCheck);
+    const isHoliday = data.holidays.includes(dateToCheck);
     if (isHoliday) {
       setHoliday(true);
     } else {
@@ -46,31 +46,33 @@ const DateInput = () => {
     setDate(newDate);
   };
   return (
-    <div className="container">
-      <div className="calendar">
-        <label htmlFor="date">Fecha</label>
-        <input
-          type="date"
-          id="date"
-          lang="es-ES"
-          min={today}
-          onChange={(e) => handleDateChange(e)}
-          value={date}
-        />
+    <Wrapper>
+      <div className="container">
+        <div className="calendar">
+          <label htmlFor="date">Fecha</label>
+          <input
+            type="date"
+            id="date"
+            lang="es-ES"
+            min={today}
+            onChange={(e) => handleDateChange(e)}
+            value={date}
+          />
+        </div>
+        <div className="message">
+          <p>
+            Precio despacho: {holiday ? '$16000' : '$8000'}
+            <span
+              className="recargo"
+              style={{ display: holiday ? 'block' : 'none' }}
+            >
+              Recargo por día festivo
+            </span>
+          </p>
+          <p>Fecha estimada de entrega: {shippingDay}</p>
+        </div>
       </div>
-      <div className="message">
-        <p>
-          Precio: {holiday ? '$16000' : '$8000'}
-          <span
-            className="recargo"
-            style={{ display: holiday ? 'inline' : 'none' }}
-          >
-            Recargo por día festivo
-          </span>
-        </p>
-        <p>Fecha estimada de entrega: {shippingDay}</p>
-      </div>
-    </div>
+    </Wrapper>
   );
 };
 

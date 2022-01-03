@@ -1,8 +1,6 @@
 import React, { Dispatch } from 'react';
 import { Link } from 'react-router-dom';
 import { Wrapper } from './ProductoTarjeta.styles';
-
-// Redux
 import { connect } from 'react-redux';
 import {
   cargarProducto,
@@ -11,11 +9,17 @@ import {
 import { Producto } from '../../models/Producto';
 import { Action } from 'redux';
 
-const ProductoTarjeta = ({
+type ProductoTarjetaProps = {
+  producto: Producto;
+  agregarProductoCarrito: (id: number) => void;
+  cargarProductoCarrito: (item: Producto) => void;
+};
+
+const ProductoTarjeta: React.FC<ProductoTarjetaProps> = ({
   producto,
   agregarProductoCarrito,
   cargarProductoCarrito,
-}: any) => {
+}) => {
   return (
     <Wrapper>
       <div className="product">

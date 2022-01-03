@@ -31,7 +31,7 @@ const Cart: React.FC<CarritoProps> = ({ carrito }) => {
       <div className="cart">
         <div className="cart__items">
           {carrito.length > 0 ? (
-            carrito.map((item: any) => (
+            carrito.map((item: Producto) => (
               <ProductoCarrito key={item.id} item={item} />
             ))
           ) : (

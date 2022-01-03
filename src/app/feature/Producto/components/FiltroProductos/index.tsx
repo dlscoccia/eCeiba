@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../../../../core/api/db.json';
 import { Wrapper } from './FiltroProductos.styles';
 import { Producto } from '../../models/Producto';
-import { Action } from 'redux';
+
 
 type FiltroProps = {
   etiqueta: string;

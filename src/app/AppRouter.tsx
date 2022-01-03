@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MainPage from 'app/Main';
+import MainPage from 'app/MainPage';
 import { ProductoRouter } from 'app/feature/Producto/ProductoRouter';
 import { CarritoRouter } from 'app/feature/CarritoCompra/CarritoRouter';
 import Navbar from './shared/components/Navbar/Navbar';

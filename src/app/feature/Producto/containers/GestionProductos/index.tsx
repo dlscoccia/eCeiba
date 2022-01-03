@@ -1,7 +1,6 @@
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { Producto } from '../../models/Producto';
-import { useEffect } from 'react';
 import ListarProductos from '../../components/ListarProductos';
 
 interface GestionProductosProps {

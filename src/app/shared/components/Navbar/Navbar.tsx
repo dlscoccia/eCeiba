@@ -38,7 +38,7 @@ const Navbar = ({ carrito }: CartProps) => {
     <Wrapper>
       <nav
         className="navbar"
-        style={{ background: scrollNav ? 'var(--light-color)' : '#ffffff90' }}
+        style={{ background: scrollNav ? '#ffffff' : '#ffffff90' }}
       >
         <NavbarLogo />
         <NavbarCart cartCount={cartCount} />

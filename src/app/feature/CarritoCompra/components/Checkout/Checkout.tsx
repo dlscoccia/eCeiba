@@ -14,7 +14,15 @@ type CheckoutProps = {
 const Checkout: React.FC<CheckoutProps> = ({ carrito }) => {
   const [validInput, setValidInput] = useState([false, false, false, false]);
   const [disableSubmit, setDisableSubmit] = useState(true);
+  const [totalPrice, setTotalPrice] = useState(0);
+
   useEffect(() => {
+    let price = 0;
+    carrito.forEach((item: Producto) => {
+      price += item.qty * item.price;
+    });
+    setTotalPrice(price);
+
     const totalValidInputs = validInput.filter(
       (input) => input === true
     ).length;
@@ -23,7 +31,7 @@ const Checkout: React.FC<CheckoutProps> = ({ carrito }) => {
     } else {
       setDisableSubmit(true);
     }
-  }, [validInput]);
+  }, [validInput, carrito]);
 
   const handleValidInput = (id: number, value: boolean) => {
     const validated = [...validInput];
@@ -53,7 +61,7 @@ const Checkout: React.FC<CheckoutProps> = ({ carrito }) => {
           ))}
         </div>
         <div className="form__calendar">
-          <DateInput />
+          <DateInput totalPrice={totalPrice} />
           <button
             type="submit"
             disabled={disableSubmit}

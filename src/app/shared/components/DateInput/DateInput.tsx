@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { Wrapper } from './DateInput.styles';
 import data from '../../../core/api/db.json';
+import { addDays } from '../../utils/addDays';
 
-const addDays = (dateToAdd: string, days: number) => {
-  const newDate = new Date(dateToAdd);
-  newDate.setDate(newDate.getDate() + days);
-  return newDate.toISOString().split('T')[0];
+type DateInputProps = {
+  totalPrice: number;
 };
 
-const DateInput = () => {
+const DateInput: React.FC<DateInputProps> = ({ totalPrice }) => {
   const today = new Date().toISOString().split('T')[0];
   const [date, setDate] = useState(today);
   const [holiday, setHoliday] = useState(false);
-  const [shippingDay, setShippingDay] = useState('');
+  const [shippingDay, setShippingDay] = useState(today);
+  const shippingPrice = holiday ? 16000 : 8000;
 
   const checkIsWeekend = (dateToCHeck: string) => {
     const dayOfTheWeek = new Date(dateToCHeck).getDay();
@@ -64,7 +64,15 @@ const DateInput = () => {
         </div>
         <div className="message">
           <p>
-            Precio despacho: {holiday ? '$16000' : '$8000'}
+            Fecha estimada de entrega:{' '}
+            <span className="message__price">{shippingDay}</span>
+          </p>
+          <p>
+            Subtotal: $<span className="message__price">{totalPrice}</span>
+          </p>
+          <p>
+            Precio despacho: $
+            <span className="message__price">{shippingPrice}</span>
             <span
               className="recargo"
               style={{ display: holiday ? 'block' : 'none' }}
@@ -72,7 +80,10 @@ const DateInput = () => {
               Recargo por día festivo
             </span>
           </p>
-          <p>Fecha estimada de entrega: {shippingDay}</p>
+          <p>
+            Total del pedido: $
+            <span className="message__price">{totalPrice + shippingPrice}</span>
+          </p>
         </div>
       </div>
     </Wrapper>

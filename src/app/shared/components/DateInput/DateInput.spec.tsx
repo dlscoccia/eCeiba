@@ -4,7 +4,8 @@ import { fireEvent, render } from '@testing-library/react';
 import DateInput from './DateInput';
 
 test('renders the component', () => {
-  const component = render(<DateInput />);
+  const totalPrice = 1000;
+  const component = render(<DateInput totalPrice={totalPrice} />);
   expect(component).toBeDefined();
 
   const input = component.getByLabelText('Fecha');
@@ -15,7 +16,7 @@ test('renders the component', () => {
   fireEvent.change(input, { target: { value: '2021-12-31' } });
   expect(input).toHaveValue('2021-12-31');
 
-  component.getByText(/^Precio despacho: \$[0-9]+/);
+  component.getByText(/^Precio despacho:/);
   component.getByText(/Fecha estimada de entrega: [0-9]{4}-[0-9]{2}-[0-9]{2}/);
 
   fireEvent.change(input, { target: { value: '2022-12-08' } });

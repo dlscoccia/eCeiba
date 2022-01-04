@@ -3,7 +3,6 @@ import '@testing-library/jest-dom/extend-expect';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Carrito from './index';
-import { productos } from '../../../../core/api/db.json';
 import store from '../../../../core/redux/store';
 import { BrowserRouter as Router } from 'react-router-dom';
 

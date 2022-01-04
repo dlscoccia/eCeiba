@@ -29,6 +29,10 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    &__price {
+      font-weight: bold;
+    }
   }
   .recargo {
     color: red;

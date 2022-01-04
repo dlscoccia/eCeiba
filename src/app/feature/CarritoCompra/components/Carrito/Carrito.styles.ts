@@ -78,14 +78,18 @@ export const Wrapper = styled.div`
     padding: 10px 20px;
     border: 2px solid var(--secondary-color);
     background: var(--dark-color);
-    color: red;
-    font-size: 1.2rem;
-    font-weight: bold;
     cursor: pointer;
     text-decoration: none;
+    text-align: center;
 
     .checkoutBtn__button {
+      font-size: 1rem;
+      font-weight: bold;
       color: var(--light-color);
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: var(--text-font);
     }
   }
 

@@ -34,7 +34,8 @@ export const Wrapper = styled.div`
   .navbar__cart {
     background: #fff;
     width: 100px;
-    border: thin solid var(--dark-color);
+    font-size: 40px;
+    color: var(--dark-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,7 +67,8 @@ export const Wrapper = styled.div`
     border-radius: 50%;
     color: var(--light-color);
     background: var(--dark-color);
-    font-size: 25px;
+    font-family: var(--text-font);
+    font-size: 28px;
     display: flex;
     justify-content: center;
     align-items: center;

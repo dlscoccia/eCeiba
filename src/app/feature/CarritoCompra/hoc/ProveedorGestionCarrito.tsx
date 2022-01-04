@@ -6,17 +6,17 @@ import {
   cargarProducto,
 } from '../../../core/redux/acciones/productos/ProductosAcciones';
 import { EstadoGeneral } from '../../../core/redux/modelo/EstadoGeneral';
-import { GestionProductos } from '../containers/GestionProductos';
+import { GestionCarritoCompras } from '../containers/GestionCarritoCompras';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state: EstadoGeneral) => {
   return state.productos;
 };
 
-export const ProveedorGestionProductos = connect(mapStateToProps, {
+export const ProveedorGestionCarritoCompras = connect(mapStateToProps, {
   listarProductos: listarProductosAsync,
   agregarProducto,
   borrarProducto,
   ajustarCantidad,
   cargarProducto,
-})(GestionProductos);
+})(GestionCarritoCompras);

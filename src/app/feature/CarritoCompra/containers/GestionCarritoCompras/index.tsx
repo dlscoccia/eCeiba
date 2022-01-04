@@ -8,7 +8,7 @@ interface GestionCarritoProps {
   listarProductos: () => void;
 }
 
-export const GestionProductos: React.FC<GestionCarritoProps> = ({
+export const GestionCarritoCompras: React.FC<GestionCarritoProps> = ({
   productos,
   carrito,
   listarProductos,

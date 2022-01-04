@@ -23,6 +23,6 @@ test('renders content', () => {
 
 test('click on cart', () => {
   const component = render(<Navbar />);
-
-  const cart = component.container.querySelector('button');
+  expect(component).toBeDefined();
+  //const cart = component.container.querySelector('button');
 });

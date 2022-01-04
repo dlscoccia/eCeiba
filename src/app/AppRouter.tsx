@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MainPage from 'app/MainPage';
+import { HomeRouter } from './feature/Home/HomeRouter';
 import { ProductoRouter } from 'app/feature/Producto/ProductoRouter';
 import { CarritoRouter } from 'app/feature/CarritoCompra/CarritoRouter';
 import Navbar from './shared/components/Navbar/Navbar';
@@ -12,7 +12,7 @@ export const AppRouter = () => {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route path="/" exact component={MainPage} />
+        <Route path="/" exact component={HomeRouter} />
         <Route path="/productos" component={ProductoRouter} />
         <Route path="/carrito" component={CarritoRouter} />
         <Route path="/producto/:id" component={DetalleProducto} />

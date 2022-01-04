@@ -6,8 +6,13 @@ export const SpanFallback = styled.span`
 `;
 
 export const Div = styled.div`
-  margin-top: 10px;
-  margin-left: 10px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--header-font);
+  font-size: 100px;
 `;
 
 export {};

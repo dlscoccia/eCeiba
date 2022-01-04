@@ -13,17 +13,20 @@ const render = (component: ReactNode) =>
     </Provider>
   );
 
-test('Renders the Carrito', () => {
-  const component = render(<Carrito />);
-  component.getByText('Resumen de tu compra');
-  component.getByText('TOTAL: (0 artículos)');
-  component.getByText('$ 0');
-  component.getByText('Realizar pedido');
-  component.getByText('No tienes ningun producto agregado');
-  component.getByText('Ver productos');
+describe('Pruebas al carrito de compras vacio', () => {
+  test('Renders the Carrito', () => {
+    const component = render(<Carrito />);
+    expect(component).toBeDefined();
+  });
+
+  test('Tiene los elementos estaticos', () => {
+    const component = render(<Carrito />);
+    component.getByText('Resumen de tu compra');
+    component.getByText('TOTAL: (0 artículos)');
+    component.getByText('$ 0');
+    component.getByText('Realizar pedido');
+    component.getByText('No tienes ningun producto agregado');
+    component.getByText('Ver productos');
+  });
 });
-/* test('Renders the cart', () => {
-  const carrito = [productos[0]]
-  const component = render(<Carrito carrito={carrito} />);
-  expect(component).toBeDefined();
-}); */
+

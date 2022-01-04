@@ -14,14 +14,26 @@ const render = (component: React.ReactNode) =>
     </Provider>
   );
 
-test('carga el componente', () => {
-  const component = render(<ListarProductos />);
-  expect(component).toBeDefined();
-  component.getByText('Productos Destacados');
-  component.getByText('Mayor edad').click();
-  const numeroProductos = productos.length;
-  expect(component.getAllByText('Ver Bonsai')).toHaveLength(numeroProductos);
-  expect(component.getAllByText('Añadir al carrito')).toHaveLength(
-    numeroProductos
-  );
+describe('Lista los productos en la pagina', () => {
+  test('carga el componente', () => {
+    const component = render(<ListarProductos />);
+    expect(component).toBeDefined();
+  });
+
+  test('Tiene los elementos estaticos', () => {
+    const component = render(<ListarProductos />);
+    component.getByText('Productos Destacados');
+    component.getByText('Mayor precio');
+  });
+
+  test('Carga los productos', () => {
+    const component = render(<ListarProductos />);
+    component.getByText('Mayor precio').click();
+    const numeroProductos = productos.length;
+    expect(component.getAllByText('Ver Bonsai')).toHaveLength(numeroProductos);
+    expect(component.getAllByText('Añadir al carrito')).toHaveLength(
+      numeroProductos
+    );
+  });
 });
+

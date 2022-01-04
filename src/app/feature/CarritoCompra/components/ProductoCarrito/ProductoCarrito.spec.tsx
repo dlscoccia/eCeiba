@@ -26,13 +26,22 @@ const item = {
   species: 'arbolito',
 };
 
-test('renders content', () => {
-  const component = render(<ProductoCarrito item={item} />);
-  component.getByAltText('PREMNA 6 AÑOS');
-  component.getByText('PREMNA 6 AÑOS');
-  component.getByText(/Precio unitario/i);
-  component.getByText(/140000/i);
-  const qty = document.querySelector('input');
-  expect(qty).toHaveValue(5);
-  component.container.querySelector('button');
+describe('Componente ProductoCarrito', () => {
+  test('El componente carga', () => {
+    const component = render(<ProductoCarrito item={item} />);
+    expect(component).toBeDefined();
+  });
+
+  test('Tiene todos los campos necesarios', () => {
+    const component = render(<ProductoCarrito item={item} />);
+    component.getByAltText('PREMNA 6 AÑOS');
+    component.getByText('PREMNA 6 AÑOS');
+    component.getByText(/Precio unitario/i);
+    component.getByText(/140000/i);
+    const qty = document.querySelector('input');
+    expect(qty).toHaveValue(5);
+    component.container.querySelector('button');
+  });
 });
+
+

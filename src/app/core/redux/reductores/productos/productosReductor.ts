@@ -23,6 +23,7 @@ const initialState: EstadoProducto = {
     age: 0,
   },
 };
+
 const productosReductor = (
   state = initialState,
   action: TiposAccionesProducto

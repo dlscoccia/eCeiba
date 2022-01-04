@@ -13,30 +13,52 @@ const render = (component: ReactNode) =>
     </Provider>
   );
 
-test('Renders the cart', () => {
-  const component = render(<Checkout />);
-  expect(component).toBeDefined();
-  const button = component.getByText('Confirmar');
+    describe('Proceso de checkout', () => {
+      const component = render(<Checkout />);
 
-  expect(button).toBeDisabled();
+      test('Renders the cart', () => {
+        expect(component).toBeDefined();
+      });
+      const button = component.getByText('Confirmar');
 
-  const nombre = component.getByPlaceholderText('nombre');
-  fireEvent.change(nombre, { target: { value: 'Paco' } });
-  fireEvent.blur(nombre);
+      test('Tiene el boton confirmar desabilitado al inicio', () => {
+        expect(button).toBeDisabled();
+      });
 
-  const apellido = component.getByPlaceholderText('apellido');
-  fireEvent.change(apellido, { target: { value: 'Tija' } });
-  fireEvent.blur(apellido);
+      test('Cambia el input nombre', () => {
+        const component = render(<Checkout />);
+        const nombre = component.getByPlaceholderText('nombre');
+        fireEvent.change(nombre, { target: { value: 'Alfonso' } });
+        fireEvent.blur(nombre);
 
-  expect(button).toBeDisabled();
+      });
 
-  const email = component.getByPlaceholderText('email');
-  fireEvent.change(email, { target: { value: 'paco@gmail.com' } });
-  fireEvent.blur(email);
+      test('Cambia el input apellido', () => {
+        const component = render(<Checkout />);
+        const apellido = component.getByPlaceholderText('apellido');
+        fireEvent.change(apellido, { target: { value: 'Tijanero' } });
+        fireEvent.blur(apellido);
+      });
 
-  const direccion = component.getByPlaceholderText('direccion');
-  fireEvent.change(direccion, { target: { value: 'la casa de la esquina' } });
-  fireEvent.blur(direccion);
+      test('El boton sigue desabilitado por faltar 2 inputs', () => {
+        expect(button).toBeDisabled();
+      });
 
-  fireEvent.click(button);
-});
+      test('Cambia el email', () => {
+        const component = render(<Checkout />);
+        const email = component.getByPlaceholderText('email');
+        fireEvent.change(email, { target: { value: 'paco@gmail.com' } });
+        fireEvent.blur(email);
+      });
+
+      test('Cambia la direccion', () => {
+        const component = render(<Checkout />);
+        const direccion = component.getByPlaceholderText('direccion');
+        fireEvent.change(direccion, {
+          target: { value: 'la casa de la esquina' },
+        });
+        fireEvent.blur(direccion);
+      });
+    });
+
+

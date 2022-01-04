@@ -48,5 +48,4 @@ test('El componente carga', () => {
 
   const component = render(<GestionCarritoCompras {...opciones} />);
   expect(component).toBeDefined();
-  component.debug();
 });

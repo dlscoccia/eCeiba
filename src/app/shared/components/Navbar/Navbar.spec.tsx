@@ -13,16 +13,17 @@ const render = (component: ReactNode) =>
     </Provider>
   );
 
-test('renders content', () => {
-  const component = render(<Navbar />);
-  component.getByText('eCeiba');
-  component.getByAltText('logo');
-  component.container.querySelector('svg');
-  component.getByText('0');
+describe('Componente header', () => {
+  test('renders content', () => {
+    const component = render(<Navbar />);
+    expect(component).toBeDefined();
+  });
+  test('tiene los elementos visuales', () => {
+    const component = render(<Navbar />);
+    component.getByText('eCeiba');
+    component.getByAltText('logo');
+    component.container.querySelector('svg');
+    component.getByText('0');
+  });
 });
 
-test('click on cart', () => {
-  const component = render(<Navbar />);
-  expect(component).toBeDefined();
-  //const cart = component.container.querySelector('button');
-});

@@ -61,6 +61,7 @@ describe('Shopping cart', () => {
     cy.get('input[placeholder="email"]').type('alfonso@gmail.com');
     cy.get('input[placeholder="direccion"]').type('La casa de la esquina');
     cy.get('input[type="date"]').type('2022-01-07');
+    cy.contains('148000');
     cy.contains('Confirmar').click();
   });
 });

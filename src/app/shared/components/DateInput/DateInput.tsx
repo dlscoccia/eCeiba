@@ -12,7 +12,9 @@ const DateInput: React.FC<DateInputProps> = ({ totalPrice }) => {
   const [date, setDate] = useState(today);
   const [holiday, setHoliday] = useState(false);
   const [shippingDay, setShippingDay] = useState(today);
-  const shippingPrice = holiday ? 16000 : 8000;
+  const holidayShipping = 16000;
+  const normalShipping = 8000;
+  const shippingPrice = holiday ? holidayShipping : normalShipping;
 
   const checkIsWeekend = (dateToCHeck: string) => {
     const dayOfTheWeek = new Date(dateToCHeck).getDay();

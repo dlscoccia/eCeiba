@@ -7,9 +7,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test --watchAll",
-    "test:coverage": "react-scripts test --watchAll=false --coverage",
+    "test:coverage": "react-scripts test --coverage --watchAll=false  --testResultsProcessor jest-sonar-reporter",
     "cypress:open": "cypress open",
     "server": "json-server --watch src/app/core/api/db.json --port 5000"
+  },
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-report.xml",
+    "indent": 4
   },
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.55",

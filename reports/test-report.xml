@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\Home\components\ImageSlider\ImageSlider.spec.tsx">
+        <testCase name="Componente imageslider pruebas Carga el componente" duration="240"/>
+        <testCase name="Componente imageslider pruebas Tiene los elementos" duration="324"/>
+        <testCase name="Componente imageslider pruebas Funciona el boton derecho" duration="126"/>
+        <testCase name="Componente imageslider pruebas Regresa al inicio con el boton derecho" duration="118"/>
+        <testCase name="Componente imageslider pruebas Funciona boton izquierdo" duration="124"/>
+        <testCase name="Componente imageslider pruebas regresa al inicio con el boton izquierdo" duration="53"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\Producto\components\ListarProductos\ListarProductos.spec.tsx">
+        <testCase name="Lista los productos en la pagina carga el componente" duration="138"/>
+        <testCase name="Lista los productos en la pagina Tiene los elementos estaticos" duration="46"/>
+        <testCase name="Lista los productos en la pagina Carga los productos" duration="343"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\shared\components\Navbar\Navbar.spec.tsx">
+        <testCase name="Componente header renders content" duration="87"/>
+        <testCase name="Componente header tiene los elementos visuales" duration="36"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\Home\components\VideoBanner\VideoBanner.spec.tsx">
+        <testCase name="Renders the component" duration="84"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\CarritoCompra\containers\GestionCarritoCompras\GestionCarritoCompra.spec.tsx">
+        <testCase name="El componente carga" duration="117"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\Producto\containers\GestionProductos\GestionProductos.spec.tsx">
+        <testCase name="El componente carga" duration="338"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\CarritoCompra\components\Carrito\Carrito.spec.tsx">
+        <testCase name="Pruebas al carrito de compras vacio Renders the Carrito" duration="112"/>
+        <testCase name="Pruebas al carrito de compras vacio Tiene los elementos estaticos" duration="33"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\CarritoCompra\components\ProductoCarrito\ProductoCarrito.spec.tsx">
+        <testCase name="Componente ProductoCarrito El componente carga" duration="126"/>
+        <testCase name="Componente ProductoCarrito Tiene todos los campos necesarios" duration="39"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\Producto\components\FiltroProductos\FiltrosProductos.spec.tsx">
+        <testCase name="Renders the component" duration="21"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\shared\components\Footer\Footer.spec.tsx">
+        <testCase name="Componente footer Carga el componente" duration="21"/>
+        <testCase name="Componente footer Tiene el texto" duration="11"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\shared\components\TextInput\TextInput.spec.tsx">
+        <testCase name="Componente input generico Carga el componente" duration="29"/>
+        <testCase name="Componente input generico el componente tiene valor y label correcto" duration="16"/>
+        <testCase name="Componente input generico el input cambia el valor" duration="16"/>
+        <testCase name="Componente input generico crea un input email" duration="12"/>
+        <testCase name="Componente input generico cambia el valor del input" duration="29"/>
+        <testCase name="Componente input generico muestra mensajes de verificacion" duration="30"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\Producto\components\DetalleProducto\DetalleProducto.spec.tsx">
+        <testCase name="Carga el componente" duration="52"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\Home\components\Suscribete\Suscribete.spec.tsx">
+        <testCase name="Renders the component" duration="102"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\Home\components\ServicesGallery\ServicesGallery.spec.tsx">
+        <testCase name="Renders the component" duration="85"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\core\redux\reductores\productos\ProductosReductor.spec.ts">
+        <testCase name="Reductor productos Verifica las acciones" duration="20"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\shared\components\DateInput\DateInput.spec.tsx">
+        <testCase name="Componente de fecha renders the component" duration="157"/>
+        <testCase name="Componente de fecha Tiene el input" duration="44"/>
+        <testCase name="Componente de fecha Tiene la fecha actual" duration="23"/>
+        <testCase name="Componente de fecha Cambia el valor de la fecha" duration="63"/>
+        <testCase name="Componente de fecha Muestra recargo por festivo" duration="36"/>
+        <testCase name="Componente de fecha No muestra recargo en no festivo" duration="142"/>
+        <testCase name="Componente de fecha Recargo con pedido fin de semana y entrega lunes festivo" duration="26"/>
+        <testCase name="Componente de fecha Entrega el siguiente lunes" duration="29"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\feature\CarritoCompra\components\Checkout\Checkout.spec.tsx">
+        <testCase name="Proceso de checkout Renders the cart" duration="13"/>
+        <testCase name="Proceso de checkout Tiene el boton confirmar desabilitado al inicio" duration="2"/>
+        <testCase name="Proceso de checkout Cambia el input nombre" duration="52"/>
+        <testCase name="Proceso de checkout Cambia el input apellido" duration="50"/>
+        <testCase name="Proceso de checkout El boton sigue desabilitado por faltar 2 inputs" duration="1"/>
+        <testCase name="Proceso de checkout Cambia el email" duration="45"/>
+        <testCase name="Proceso de checkout Cambia la direccion" duration="27"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\App.spec.tsx">
+        <testCase name="renders the component" duration="989"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\index.spec.tsx">
+        <testCase name="El componente carga" duration="998"/>
+    </file>
+    <file path="C:\Users\daniel.lorenzo\Desktop\Repositories\eceibav2\src\app\AppRouter.spec.tsx">
+        <testCase name="Approuter" duration="829"/>
+    </file>
+</testExecutions>
